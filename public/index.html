@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,17 +12,27 @@
     
     :root { 
       --cor-tabuleiro-verde: #006a2e; 
-      --cor-tabuleiro-branco: #efefef; 
+      --cor-tabuleiro-branco: #efefef;
+      --tamanho-quadrilatero-tabuleiro: 10px; 
+    }
+
+    .layout-conteiner {
+      display: inline;
+    }
+
+    .layout-tabuleiro {
+      display: grid;
     }
 
   </style>
 
   <script>
 
-    
+    let gancho = document.getElementById("tabuleiro");
 
   </script>
 
+  <div id="tabuleiro" name="tabuleiro"></div>
 
 </body>
 </html>
