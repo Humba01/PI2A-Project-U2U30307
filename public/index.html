@@ -1,87 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-  <style>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
     
-    :root {
-      --cor-base-pagina: #010101;
-      --cor-primaria-pagina: #141414;
-      --cor-secundaria-pagina: #242424;
-      --cor-interface-primaria-pagina: #0044ff;
-      --cor-interface-secundaria-pagina: #22a100;
-      --cor-tabuleiro-verde: #006a2e; 
-      --cor-tabuleiro-branco: #efefef;
-      --cor-texto-tamanho-um: 20rem;
-      --cor-texto-tamanho-dois: 23rem;
-      --cor-texto-tamanho-tres: 26rem;
-      --tamanho-quadrilatero-tabuleiro: 10px; 
-    }
-
-    .layout-conteiner {
-      display: inline;
-      margin: 0.5vw 0.4vw;
-    }
-
-    .layout-tabuleiro {
-      display: grid;
-      grid-template-columns: 8;
-      grid-template-rows: 8;
-    }
-
-    .layout-tabuleiro-casa-impar {
-      background-color: var(--cor-tabuleiro-branco);
-    }
-
-    .layout-tabuleiro-casa-par {
-      background-color: var(--cor-tabuleiro-verde);
-    }
-
-  </style>
-
-  <script>
-
-    let gancho = document.getElementById("tabuleiro");
-
-    class HtmlDinamico {
-
-      criaElemento() {
-        return document.createElement("div");
+    <style>
+      
+      :root {
+        --cor-base-pagina: #010101;
+        --cor-primaria-pagina: #141414;
+        --cor-secundaria-pagina: #242424;
+        --cor-interface-primaria-pagina: #0044ff;
+        --cor-interface-secundaria-pagina: #22a100;
+        --cor-tabuleiro-verde: #006a2e; 
+        --cor-tabuleiro-branco: #efefef;
+        --cor-texto-tamanho-um: 20rem;
+        --cor-texto-tamanho-dois: 23rem;
+        --cor-texto-tamanho-tres: 26rem;
+        --tamanho-quadrilatero-tabuleiro: 10px; 
       }
 
-    }
+      .layout-conteiner {
+        display: inline;
+        margin: 0.5vw 0.4vw;
+      }
 
-    for(let i = 1; i <= 9; i++) {
+      .layout-tabuleiro {
+        display: grid;
+        grid-template-columns: 8;
+        grid-template-rows: 8;
+      }
+
+      .layout-tabuleiro-casa-impar {
+        background-color: var(--cor-tabuleiro-branco);
+      }
+
+      .layout-tabuleiro-casa-par {
+        background-color: var(--cor-tabuleiro-verde);
+      }
+
+    </style>
+
+    <script>
+
+      let gancho = document.getElementById("tabuleiro");
+
+      class HtmlDinamico {
+
+        criaElemento() {
+          return document.createElement("div");
+        }
+
+      }
+
+      for(let i = 1; i <= 9; i++) {
+        
+        for(let j = 1; j <= 9; j++) {
+        
+          let gerador = new HtmlDinamico();
+          let resultado = gerador.criaElemento();
+          let gridAreaPos = 1;
+          let coloracaoCsaTab = gridAreaPos % 2;
+          if(coloracaoCsaTab == 0) { resultado.classList.add(".layout-tabuleiro-casa-par"); }
+          if(coloracaoCsaTab == 1) { resultado.classList.add(".layout-tabuleiro-casa-impar"); }
+          resultado.id = `${i}${j}`;
+          resultado.style.gridArea = gridAreaPos.toString();
+          gancho.appendChild(resultado);
+
+        } 
       
-      for(let j = 1; j <= 9; j++) {
-      
-        let gerador = new HtmlDinamico();
-        let resultado = gerador.criaElemento();
-        let gridAreaPos = 1;
-        let coloracaoCsaTab = gridAreaPos % 2;
-        if(coloracaoCsaTab == 0) { resultado.classList.add(".layout-tabuleiro-casa-par"); }
-        if(coloracaoCsaTab == 1) { resultado.classList.add(".layout-tabuleiro-casa-impar"); }
-        resultado.id = `${i}${j}`;
-        resultado.style.gridArea = gridAreaPos.toString();
-        gancho.appendChild(resultado);
+      }
 
-      } 
-    
-    }
+    </script>
 
-  </script>
+    <header id="cabecalho"></header>
 
-  <header id="cabecalho"></header>
+    <div id="tabuleiro" name="tabuleiro"></div>
 
-  <div id="tabuleiro" name="tabuleiro"></div>
+    <section id="informacoes"></section>
 
-  <section id="informacoes"></section>
-
-</body>
+  </body>
 </html>
