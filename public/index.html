@@ -10,9 +10,17 @@
   
   <style>
     
-    :root { 
+    :root {
+      --cor-base-pagina: #010101;
+      --cor-primaria-pagina: #141414;
+      --cor-secundaria-pagina: #242424;
+      --cor-interface-primaria-pagina: #0044ff;
+      --cor-interface-secundaria-pagina: #22a100;
       --cor-tabuleiro-verde: #006a2e; 
       --cor-tabuleiro-branco: #efefef;
+      --cor-texto-tamanho-um: 20rem;
+      --cor-texto-tamanho-dois: 23rem;
+      --cor-texto-tamanho-tres: 26rem;
       --tamanho-quadrilatero-tabuleiro: 10px; 
     }
 
@@ -27,6 +35,14 @@
       grid-template-rows: 8;
     }
 
+    .layout-tabuleiro-casa-impar {
+      background-color: var(--cor-tabuleiro-branco);
+    }
+
+    .layout-tabuleiro-casa-par {
+      background-color: var(--cor-tabuleiro-verde);
+    }
+
   </style>
 
   <script>
@@ -35,10 +51,28 @@
 
     class HtmlDinamico {
 
-      criaElemento(tag=HTMLDivElement) {
-
+      criaElemento() {
+        return document.createElement("div");
       }
 
+    }
+
+    for(let i = 1; i <= 9; i++) {
+      
+      for(let j = 1; j <= 9; j++) {
+      
+        let gerador = new HtmlDinamico();
+        let resultado = gerador.criaElemento();
+        let gridAreaPos = 1;
+        let coloracaoCsaTab = gridAreaPos % 2;
+        if(coloracaoCsaTab == 0) { resultado.classList.add(".layout-tabuleiro-casa-par"); }
+        if(coloracaoCsaTab == 1) { resultado.classList.add(".layout-tabuleiro-casa-impar"); }
+        resultado.id = `${i}${j}`;
+        resultado.style.gridArea = gridAreaPos.toString();
+        gancho.appendChild(resultado);
+
+      } 
+    
     }
 
   </script>
