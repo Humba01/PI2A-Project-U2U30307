@@ -46,7 +46,7 @@
     </style>
 
     <script>
-
+      // DOM manipulação
       let gancho = document.getElementById("tabuleiro");
 
       class HtmlDinamico {
@@ -74,6 +74,17 @@
         } 
       
       }
+
+    </script>
+
+    <script>
+      // Ngrok Config
+      const ngrok = require('ngrok');
+      (async function() {
+        const url = await ngrok.connect();
+        const tunnels = await ngrok.listTunnels();
+        const getUrl = await ngrok.getUrl();
+      })();
 
     </script>
 
