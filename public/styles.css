@@ -1,8 +1,8 @@
 
 :root {
-  --cor-base-pagina: #010101;
+  --cor-base-pagina: #232323;
   --cor-primaria-pagina: #141414;
-  --cor-secundaria-pagina: #242424;
+  --cor-secundaria-pagina: #434343;
   --cor-interface-primaria-pagina: #0044ff;
   --cor-interface-secundaria-pagina: #22a100;
   --cor-tabuleiro-verde: #006a2e; 
@@ -10,18 +10,31 @@
   --cor-texto-tamanho-um: 20rem;
   --cor-texto-tamanho-dois: 23rem;
   --cor-texto-tamanho-tres: 26rem;
-  --tamanho-quadrilatero-tabuleiro: 10px; 
+  --tamanho-quadrilatero-tabuleiro: 10px;
+}
+
+html, body, header, head, footer, h1, h2, h3, h4, h5, h6, div, section, textarea, p, spam {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--cor-base-pagina);
 }
 
 .layout-conteiner {
-  display: inline;
+  display: grid;
   margin: 0.5vw 0.4vw;
+  grid-template-rows: 72px;
+  grid-template-columns: 72px;
 }
 
 .layout-tabuleiro {
   display: grid;
-  grid-template-columns: 8;
-  grid-template-rows: 8;
+  width: calc(72px*8);
+  height: calc(72px*8);
+  border: #006a2e 1.5px solid;
+  border-radius: 0.2vw;
 }
 
 .layout-tabuleiro-casa-impar {
