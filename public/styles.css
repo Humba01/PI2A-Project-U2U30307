@@ -71,18 +71,17 @@ html {
 .layout-conteiner {
   display: grid;
   margin: 0.5vw 0.4vw;
-  grid-template-rows: 65px;
-  grid-template-columns: 65px;
+  box-shadow: var(--cor-sombra-elementos) 1px 1px 4px;
 }
 
 .layout-tabuleiro {
   display: grid;
-  width: calc(65px*8);
-  height: calc(65px*8);
-  border: #006a2e 1.5px solid;
-  border-radius: 0.2vw;
   background-color: var(--cor-secundaria-pagina);
-  box-shadow: var(--cor-sombra-elementos) 1px 1px 4px;
+}
+
+.layout-tabuleiro-casa {
+  width: 60px;
+  height: 60px;
 }
 
 .layout-tabuleiro-casa-impar {
@@ -98,10 +97,26 @@ html {
   width: 600px;
   margin: 0.5vw 0.4vw;
   height: calc(65px*4);
-  margin-left: 6.2vw;
+  margin-left: 7.5vw;
   margin-right: 2vw;
   border-radius: 0.2vw;
   border: #0044ff 1.5px solid;
   background-color: var(--cor-secundaria-pagina);
   box-shadow: var(--cor-sombra-elementos) 1px 1px 4px;
+}
+
+#cs11 {
+  border-top-left-radius: 5px;
+}
+
+#cs18 {
+  border-top-right-radius: 5px;
+}
+
+#cs81 {
+  border-bottom-left-radius: 5px;
+}
+
+#cs88 {
+  border-bottom-right-radius: 5px;
 }

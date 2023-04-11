@@ -1,7 +1,6 @@
 // DOM manipulação
 let gancho = document.getElementById("tabuleiro")
   ,counter = 0
-  ,counterAux = 0
   ,corIndicada;
 
 for(let i = 1; i <= 8; i++) { 
@@ -10,12 +9,18 @@ for(let i = 1; i <= 8; i++) {
     
     let element = document.createElement("div");
     counter++;
-    element.id = `${i}${j}`;
+    element.id = `cs${i}${j}`;
     element.style.gridColumn = j;
     element.style.gridRow = i; 
+    element.classList.add("layout-tabuleiro-casa");
     
-    // if(counter == 0) { element.classList.add("layout-tabuleiro-casa-par"); }
-    // if(counter == 1) { element.classList.add("layout-tabuleiro-casa-impar"); }
+    if(i == 1 || i == 3 || i == 5 || i == 7) { 
+      if(counter % 2 == 0) { element.classList.add("layout-tabuleiro-casa-par"); }
+      if(counter % 2 == 1) { element.classList.add("layout-tabuleiro-casa-impar"); }
+    } else {
+      if(counter % 2 == 0) { element.classList.add("layout-tabuleiro-casa-impar"); }
+      if(counter % 2 == 1) { element.classList.add("layout-tabuleiro-casa-par"); }
+    }
 
     gancho.appendChild(element);
 
