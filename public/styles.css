@@ -1,3 +1,4 @@
+/* Fontes de Texto */
 @font-face {
   font-family: "Nunito_Sans_Regular";
   src: url(./assets/fonts/Nunito_Sans/NunitoSans-Regular.ttf);
@@ -8,6 +9,10 @@
   src: url(./assets/fonts/Titillium_Web/TitilliumWeb-Regular.ttf);
 }
 
+/* Animações */
+@keyframes title_animation { }
+
+/* Estilizações */
 :root {
   --cor-base-pagina: #232323;
   --cor-primaria-pagina: #141414;

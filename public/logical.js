@@ -3,9 +3,11 @@ let gancho = document.getElementById("tabuleiro");
 
 let divsTabuleiro = [];
 
-class TabuleiroCreator { 
+let element = document.createElement("div");
 
-  divConstructor() {
+for(let i = 0; i <= 8; i++) { 
+
+  for(let j = 0; j <= 8; j++) {
 
     
 
