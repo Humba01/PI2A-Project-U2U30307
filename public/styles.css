@@ -60,7 +60,7 @@ html {
   padding: 0.8vw 0.6vw;
   border-radius: 4px;
   background-color: var(--cor-secundaria-pagina);
-  box-shadow: var(--cor-sombra-elementos) 0px 0px 5px;
+  box-shadow: var(--cor-sombra-elementos) 1px 1px 5px;
   color: #ffffff;
 }
 
@@ -82,7 +82,7 @@ html {
   border: #006a2e 1.5px solid;
   border-radius: 0.2vw;
   background-color: var(--cor-secundaria-pagina);
-  box-shadow: var(--cor-sombra-elementos) 0px 0px 4px;
+  box-shadow: var(--cor-sombra-elementos) 1px 1px 4px;
 }
 
 .layout-tabuleiro-casa-impar {
@@ -103,5 +103,5 @@ html {
   border-radius: 0.2vw;
   border: #0044ff 1.5px solid;
   background-color: var(--cor-secundaria-pagina);
-  box-shadow: var(--cor-sombra-elementos) 0px 0px 4px;
+  box-shadow: var(--cor-sombra-elementos) 1px 1px 4px;
 }
