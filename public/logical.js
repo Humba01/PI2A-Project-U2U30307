@@ -1,5 +1,5 @@
 // DOM manipulação
-let gancho = document.getElementById("tabuleiro"), counter = 0;
+let gancho = document.getElementById("tabuleiro"), counter = 0, separador;
 
 for(let i = 1; i <= 8; i++) { 
   
@@ -11,8 +11,10 @@ for(let i = 1; i <= 8; i++) {
     element.style.gridColumn = j;
     element.style.gridRow = i; 
     element.classList.add("app-tabuleiro-casa");
+
+    separador = i % 2;
     
-    if(i == 1 || i == 3 || i == 5 || i == 7) { 
+    if(separador == 1) { 
       if(counter % 2 == 0) { element.classList.add("app-tabuleiro-casa-par"); }
       if(counter % 2 == 1) { element.classList.add("app-tabuleiro-casa-impar"); }
     } else {

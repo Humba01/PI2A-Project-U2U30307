@@ -95,7 +95,7 @@ html {
 }
 
 /* Lista de Identificadores */
-#informacoes {
+#app-card-informacoes {
   display: inline-block;
   width: 600px;
   margin: 0.5vw 0.4vw;
