@@ -1,12 +1,12 @@
 /* Fontes de Texto */
 @font-face {
   font-family: "Nunito_Sans_Regular";
-  src: url(./assets/fonts/Nunito_Sans/NunitoSans-Regular.ttf);
+  src: url(./assets/fonts/NunitoSans-Regular.ttf);
 }
 
 @font-face {
   font-family: "Titulium_Web_Regular";
-  src: url(./assets/fonts/Titillium_Web/TitilliumWeb-Regular.ttf);
+  src: url(./assets/fonts/TitilliumWeb-Regular.ttf);
 }
 
 /* Animações */
