@@ -22,9 +22,9 @@
   --cor-interface-secundaria-pagina: #225100;
   --cor-tabuleiro-verde: #006a2e; 
   --cor-tabuleiro-branco: #efefef;
-  --cor-texto-tamanho-um: 20rem;
-  --cor-texto-tamanho-dois: 23rem;
-  --cor-texto-tamanho-tres: 26rem;
+  --tamanho-texto-m-um: 1.2rem;
+  --tamanho-texto-m-dois: 1.6rem;
+  --tamanho-texto-m-tres: 2.4rem;
   --tamanho-quadrilatero-tabuleiro: 10px;
 }
 
