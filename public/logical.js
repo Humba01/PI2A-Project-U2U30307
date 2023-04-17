@@ -12,14 +12,14 @@ for(let i = 1; i <= 8; i++) {
     element.id = `cs${i}${j}`;
     element.style.gridColumn = j;
     element.style.gridRow = i; 
-    element.classList.add("layout-tabuleiro-casa");
+    element.classList.add("app-tabuleiro-casa");
     
     if(i == 1 || i == 3 || i == 5 || i == 7) { 
-      if(counter % 2 == 0) { element.classList.add("layout-tabuleiro-casa-par"); }
-      if(counter % 2 == 1) { element.classList.add("layout-tabuleiro-casa-impar"); }
+      if(counter % 2 == 0) { element.classList.add("app-tabuleiro-casa-par"); }
+      if(counter % 2 == 1) { element.classList.add("app-tabuleiro-casa-impar"); }
     } else {
-      if(counter % 2 == 0) { element.classList.add("layout-tabuleiro-casa-impar"); }
-      if(counter % 2 == 1) { element.classList.add("layout-tabuleiro-casa-par"); }
+      if(counter % 2 == 0) { element.classList.add("app-tabuleiro-casa-impar"); }
+      if(counter % 2 == 1) { element.classList.add("app-tabuleiro-casa-par"); }
     }
 
     gancho.appendChild(element);

@@ -28,6 +28,7 @@
   --tamanho-quadrilatero-tabuleiro: 10px;
 }
 
+/* CSS Reset */
 html, body, header, head, footer, h1, h2, h3, h4, h5, h6, div, section, textarea, p, span {
   margin: 0;
   padding: 0;
@@ -37,6 +38,7 @@ html {
   background-color: var(--cor-base-pagina);
 }
 
+/* Lista de Classes */
 .app-conteiner {
   display: flex;
   flex-wrap: wrap;
@@ -64,34 +66,35 @@ html {
   color: #ffffff;
 }
 
-.model-table {
+.app-flex-tabuleiro-conteiner {
   display: inline-block;
 }
 
-.layout-conteiner {
+.app-tabuleiro-conteiner {
   display: grid;
   margin: 0.5vw 0.4vw;
   box-shadow: var(--cor-sombra-elementos) 1px 1px 4px;
 }
 
-.layout-tabuleiro {
+.app-tabuleiro {
   display: grid;
   background-color: var(--cor-secundaria-pagina);
 }
 
-.layout-tabuleiro-casa {
+.app-tabuleiro-casa {
   width: 60px;
   height: 60px;
 }
 
-.layout-tabuleiro-casa-impar {
+.app-tabuleiro-casa-impar {
   background-color: var(--cor-tabuleiro-branco);
 }
 
-.layout-tabuleiro-casa-par {
+.app-tabuleiro-casa-par {
   background-color: var(--cor-tabuleiro-verde);
 }
 
+/* Lista de Identificadores */
 #informacoes {
   display: inline-block;
   width: 600px;
