@@ -1,7 +1,6 @@
 // DOM manipulação
 let gancho = document.getElementById("tabuleiro")
-  ,counter = 0
-  ,corIndicada;
+  ,counter = 0;
 
 for(let i = 1; i <= 8; i++) { 
   
