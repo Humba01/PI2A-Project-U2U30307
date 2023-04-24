@@ -10,7 +10,15 @@
 }
 
 /* Animações */
-@keyframes title_animation { }
+@keyframes title_animation {
+
+  0% { }
+  25% { }
+  50% { }
+  75% { }
+  100% { }
+
+}
 
 /* Estilizações */
 :root {

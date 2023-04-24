@@ -1,0 +1,5 @@
+1 camada => 1segs;
+2 camadas => 3segs;
+3 camadas => 12segs;
+4 camadas => 1min;
+5 camadas => 19min;
