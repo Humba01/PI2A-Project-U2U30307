@@ -1,7 +1,7 @@
 // DOM manipulação
 let gancho = document.getElementById("tabuleiro"), counter = 0, separador;
 
-// Sources e Animações do Programa
+// Sources do Programa
 let imgSrcPieces = [
   "assets/imgs/pieces/selected/Chess_bdt45.svg.png",
   "assets/imgs/pieces/selected/Chess_blt45.svg.png",
