@@ -1,22 +1,6 @@
 // DOM manipulação
 let gancho = document.getElementById("tabuleiro"), counter = 0, separador;
 
-// Sources do Programa
-let imgSrcPieces = [
-  "assets/imgs/pieces/selected/Chess_bdt45.svg.png",
-  "assets/imgs/pieces/selected/Chess_blt45.svg.png",
-  "assets/imgs/pieces/selected/Chess_kdt45.svg.png",
-  "assets/imgs/pieces/selected/Chess_klt45.svg.png",
-  "assets/imgs/pieces/selected/Chess_ndt45.svg.png",
-  "assets/imgs/pieces/selected/Chess_nlt45.svg.png",
-  "assets/imgs/pieces/selected/Chess_pdt45.svg.png",
-  "assets/imgs/pieces/selected/Chess_plt45.svg.png",
-  "assets/imgs/pieces/selected/Chess_qdt45.svg.png",
-  "assets/imgs/pieces/selected/Chess_qlt45.svg.png",
-  "assets/imgs/pieces/selected/Chess_rdt45.svg.png",
-  "assets/imgs/pieces/selected/Chess_rlt45.svg.png",
-];
-
 // Construtor do Tabuleiro
 for(let i = 1; i <= 8; i++) { 
   
@@ -30,8 +14,33 @@ for(let i = 1; i <= 8; i++) {
       element.classList.add("app-tabuleiro-casa");
 
     let elementImg = document.createElement("img");
-      elementImg.id = `cs/img${i}${j}`;
+      elementImg.id = `cs-img${i}${j}`;
       element.appendChild(elementImg);
+
+    let imgSrcPecas = [
+      "assets/imgs/pieces/selected/Chess_bdt45.svg.png",
+      "assets/imgs/pieces/selected/Chess_blt45.svg.png",
+      "assets/imgs/pieces/selected/Chess_kdt45.svg.png",
+      "assets/imgs/pieces/selected/Chess_klt45.svg.png",
+      "assets/imgs/pieces/selected/Chess_ndt45.svg.png",
+      "assets/imgs/pieces/selected/Chess_nlt45.svg.png",
+      "assets/imgs/pieces/selected/Chess_pdt45.svg.png",
+      "assets/imgs/pieces/selected/Chess_plt45.svg.png",
+      "assets/imgs/pieces/selected/Chess_qdt45.svg.png",
+      "assets/imgs/pieces/selected/Chess_qlt45.svg.png",
+      "assets/imgs/pieces/selected/Chess_rdt45.svg.png",
+      "assets/imgs/pieces/selected/Chess_rlt45.svg.png",
+    ];
+
+    // for(let i = 0; i < imgSrcPecas.length; i++) {
+    //   if(i < 8) {
+    //     elementosPioes[i].src = imgSrcPecas[6];
+    //   }
+    //   if(i >= 8) {
+    //     elementosPioes[i].src = imgSrcPecas[7];
+    //   }
+    // }
+    
 
     separador = i % 2;
     
