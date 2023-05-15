@@ -16,26 +16,25 @@
     transition: ease-in 0.5s;
   }
 
-  100% {
+  60% {
     margin-top: 1vw;
     height: auto;
+  }
+
+  70% {
+    box-shadow: #ffffff00 0px 4px 7px;
+    transition: ease-in 6.0s;
+  }
+
+  100% {
+    box-shadow: #ffffff55 0px 4px 7px;
   }
 }
 
 /* Estilizações */
 :root {
-  --cor-base-pagina: #232323;
-  --cor-primaria-pagina: #141414;
-  --cor-secundaria-pagina: #2c2c2c;
-  --cor-sombra-elementos: #525252;
-  --cor-interface-primaria-pagina: #0044ff;
-  --cor-interface-secundaria-pagina: #225100;
-  --cor-tabuleiro-verde: #006a2e; 
-  --cor-tabuleiro-branco: #efefef;
-  --tamanho-texto-m-um: 1.2rem;
-  --tamanho-texto-m-dois: 1.6rem;
-  --tamanho-texto-m-tres: 2.4rem;
-  --tamanho-quadrilatero-tabuleiro: 10px;
+  --cor-base-pagina: #1f1f1f;
+  --cor-sec-pagina: #393939;
 }
 
 /* CSS Reset */
@@ -58,13 +57,13 @@ html {
 .app-cabecalho {
   display: flex;
   font-family: "Nunito_Sans_Regular";
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   margin: 1vw 1.5vw;
   width: 100vw;
   text-align: center;
 
-  animation: animacao-titulo 0.5s forwards;
+  animation: animacao-titulo 1.2s forwards;
 }
 
 .app-cabecalho-titulo {
@@ -73,65 +72,6 @@ html {
   margin-left: 4vw;
   padding: 0.8vw 0.6vw;
   border-radius: 4px;
-  background-color: var(--cor-secundaria-pagina);
-  box-shadow: var(--cor-sombra-elementos) 1px 1px 5px;
+  border-bottom: #282828 solid 3px;
   color: #ffffff;
-}
-
-.app-flex-tabuleiro-conteiner {
-  display: inline-block;
-}
-
-.app-tabuleiro-conteiner {
-  display: grid;
-  margin: 0.5vw 0.4vw;
-  box-shadow: var(--cor-sombra-elementos) 1px 1px 4px;
-}
-
-.app-tabuleiro {
-  display: grid;
-  background-color: var(--cor-secundaria-pagina);
-}
-
-.app-tabuleiro-casa {
-  width: 60px;
-  height: 60px;
-}
-
-.app-tabuleiro-casa-impar {
-  background-color: var(--cor-tabuleiro-branco);
-}
-
-.app-tabuleiro-casa-par {
-  background-color: var(--cor-tabuleiro-verde);
-}
-
-/* Lista de Identificadores */
-#app-card-informacoes {
-  display: inline-block;
-  width: 600px;
-  margin: 0.5vw 0.4vw;
-  height: calc(65px*4);
-  margin-left: 7.5vw;
-  margin-right: 2vw;
-  border-radius: 0.2vw;
-  border: #0044ff 1.5px solid;
-  background-color: var(--cor-secundaria-pagina);
-  box-shadow: var(--cor-sombra-elementos) 1px 1px 4px;
-}
-
-#cs11 {
-  border-top-left-radius: 5px;
-}
-
-#cs18 {
-  border-top-right-radius: 5px;
-}
-
-#cs81 {
-  border-bottom-left-radius: 5px;
-}
-
-#cs88 {
-  border-bottom-right-radius: 5px;
 }

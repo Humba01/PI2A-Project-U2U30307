@@ -10,27 +10,25 @@
   </head>
   <body>
 
-    <section class="app-conteiner">
+    <!-- react imports -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-      <section class="app-cabecalho">
+    <section id="appRoot" class="app-conteiner"></section>
 
-        <span class="app-cabecalho-titulo">Projeto Xadrez</span>
+    <!-- app imports -->
+    <script type="text/babel" src="./assets/app/components/Cabecalho.js"></script>
+    <script type="text/babel" src="./assets/app/App.js"></script>
 
-      </section>
+<!-- 
+  <div id="app-card-tabuleiro"></div>
+  <div id="app-card-lances"></div>
+  <div id="app-card-grafo"></div> 
+-->
 
-      <div id="app-card-informacoes"></div>
-  
-      <section class="app-flex-tabuleiro-conteiner">
-  
-        <section class="app-tabuleiro-conteiner">
-          <div id="tabuleiro" name="tabuleiro" class="app-tabuleiro"></div>
-        </section>
-  
-      </section>
-
-    </section>
-
-    <script src="logical.js"></script>
+    <!-- application imports -->
+    <script src="dynamic.js"></script>
 
   </body>
 </html>
