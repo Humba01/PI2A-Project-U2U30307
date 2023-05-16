@@ -2,7 +2,9 @@ let appRoot = document.getElementById('appRoot');
 
 const Application = () => {
   return (
-    <Cabecalho/>
+    <div className="app-structure">
+      <Cabecalho />
+    </div>
   )
 }
 
