@@ -74,3 +74,11 @@ html {
   justify-content: center;
   font-family: "Nunito_Sans_Regular";
 }
+
+.app-card-organizer { width: 48%; }
+
+.app-card-grafo { width: 48%; }
+
+.app-card-lances { width: 100%; }
+
+.app-card-tabuleiro { width: 100%; }
