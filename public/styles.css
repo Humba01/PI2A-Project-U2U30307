@@ -51,7 +51,7 @@ html {
 
 .app-structure {
   display: inline-flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
   vertical-align: top;
   width: 100vw;
@@ -65,6 +65,10 @@ html {
   width: 90%;
   border-radius: 3px;
   box-shadow: #111111 0px 1px 6px;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1;
+  top: 0;
 
   animation: animacao-titulo 1.2s forwards;
 }
@@ -75,10 +79,79 @@ html {
   font-family: "Nunito_Sans_Regular";
 }
 
-.app-card-organizer { width: 48%; }
+.app-card-organizer { 
+  display: flex; 
+  flex-wrap: wrap; 
+  width: 38%; 
+  justify-content: center;
+  border: #f0f0f0 1px solid;
+  border-radius: 4px;
+  position: static; 
+}
 
-.app-card-grafo { width: 48%; }
+.app-card-grafo { 
+  width: 48%; 
+  background-color: #2f2f2f; 
+  height: 82vh; 
+  position: static; 
+  box-shadow: #111111 0px 1px 6px;
+}
 
-.app-card-lances { width: 100%; }
+.app-card-lances { 
+  display: inline-flex;
+  float: right;
+  width: calc(9*50px);
+  height: 50px;
+  background-color: #2f2f2f; 
+  margin-left: 0.6vw;
+  margin-right: 0.6vw;
+  margin-bottom: 1.5vw;
+  border-radius: 2px;
+  flex-wrap: wrap;
+  box-shadow: #111111 0px 1px 6px;
+}
 
-.app-card-tabuleiro { width: 100%; }
+.app-card-tabuleiro { 
+  display: inline-flex;
+  width: calc(8*50px);
+  flex-wrap: wrap;
+  margin: 1.5vw 0.6vw;
+  box-shadow: #111111 0px 1px 6px;
+}
+
+.app-card-tabuleiro-casa {
+  display: inline-flex;
+  width: 50px;
+  height: 50px;
+}
+
+#cs11, #cs13, #cs15, #cs17,
+#cs22, #cs24, #cs26, #cs28, 
+#cs31, #cs33, #cs35, #cs37,
+#cs42, #cs44, #cs46, #cs48, 
+#cs51, #cs53, #cs55, #cs57,
+#cs62, #cs64, #cs66, #cs68, 
+#cs71, #cs73, #cs75, #cs77,
+#cs82, #cs84, #cs86, #cs88 {
+  background-color: #f0f0f0;
+}
+
+#cs12, #cs14, #cs16, #cs18,
+#cs21, #cs23, #cs25, #cs27, 
+#cs32, #cs34, #cs36, #cs38,
+#cs41, #cs43, #cs45, #cs47, 
+#cs52, #cs54, #cs56, #cs58,
+#cs61, #cs63, #cs65, #cs67, 
+#cs72, #cs74, #cs76, #cs78,
+#cs81, #cs83, #cs85, #cs87 {
+  background-color: #009a00;
+}
+
+@keyframes animacao-peca-movimento-diagonal-esquerda-superior { }
+@keyframes animacao-peca-movimento-diagonal-esquerda-inferior { }
+@keyframes animacao-peca-movimento-diagonal-direita-superior { }
+@keyframes animacao-peca-movimento-diagonal-direita-inferior { }
+@keyframes animacao-peca-movimento-para-frente { }
+@keyframes animacao-peca-movimento-para-tras { }
+@keyframes animacao-cards-esquerda { }
+@keyframes animacao-cards-direita { }

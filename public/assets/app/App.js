@@ -4,6 +4,8 @@ const Application = () => {
   return (
     <div className="app-structure">
       <Cabecalho />
+      <Organizer />
+      <Grafo />
     </div>
   )
 }
