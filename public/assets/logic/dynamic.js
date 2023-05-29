@@ -9,7 +9,6 @@ document.addEventListener("mousemove", () => {
 });
 
 // Imagens das Peças do Tabuleiro
-
 setTimeout(() => {
   
   let pioes = 
@@ -46,3 +45,5 @@ setTimeout(() => {
   }
 
 }, 1500);
+
+let dataStruct = [];
