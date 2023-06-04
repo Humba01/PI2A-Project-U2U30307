@@ -7,9 +7,15 @@ for(i = 1; i < 9; i++) {
       <img id={"pcimg"+i.toString()+j.toString()}/>
     </div>;  
     casasTabuleiro.push(struct);
+
     identificadores.push(
-      [padraoId.slice(0, 1), padraoId.slice(1, 2), padraoId.slice(2, 3), padraoId.slice(3, 4)]
-    ); 
+      [
+        padraoId.slice(0, 1), 
+        padraoId.slice(1, 2), 
+        padraoId.slice(2, 3), 
+        padraoId.slice(3, 4)
+      ]
+    );
 
   }
 }

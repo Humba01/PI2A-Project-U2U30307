@@ -31,20 +31,33 @@ let lancesTabuleiro = ["e5", "h7"];
 console.log(component);
 
 // desenvolver funcionalidade...
-function criaIndicadores() {
-  // Sinalizadores de jogadas viáveis, no tabuleiro
-  // Disposições = 6;
-  let indicadores = document.createElement("canvas");
-    indicadores.height = "20px";
-    indicadores.width = "20px";
-    indicadores.style.zIndex = "1";
-    indicadores.style.position = "relative";
+// Sinalizadores de jogadas viáveis, no tabuleiro
+// Disposições = 6;
+
+setTimeout(() => {
+      
+  for(let i = 1; i < 9; i++) {
+    for(let j = 1; j < 9; j++) {
+      let padraoId = "cs"+i.toString()+j.toString();
+  
+      let indicadores = document.createElement("canvas");
+        indicadores.style.height = "50px";
+        indicadores.style.width = "50px";
+        indicadores.style.zIndex = "1";
+        indicadores.style.position = "absolute";
+        indicadores.style.visibility = "hidden";
+        indicadores.id = "cnv"+i.toString()+j.toString();
+      let cnxt = indicadores.getContext("2d");
+        cnxt.beginPath();
+        cnxt.roundRect(100, 50, 100, 60, [120]);
+        cnxt.stroke();
+        cnxt.fillStyle = "#44444455";
+        cnxt.fill();
     
-  let cnxt = indicadores.getContext("2d");
-    cnxt.roundRect(0, 0, 20, 20, 5);
-    cnxt.fillStyle = "#44444455";
+      let pElemento = document.getElementById(padraoId);
+        pElemento.appendChild(indicadores);
+      
+    }
+  }
 
-  // adicionar ao elemento pai;
- 
-};
-
+}, 2000);
