@@ -1,24 +1,25 @@
-let casasTabuleiro = [], identificadores = [], i, j, padraoId, struct;
+let casasTabuleiro = [], identificadores = [], i, j, k, padraoId, struct;
+i = ["a", "b", "c", "d", "e", "f", "g", "h"];
 
-for(i = 1; i < 9; i++) {
+for(k = 0; k < i.length; k++) {
   for(j = 1; j < 9; j++) {
-    padraoId = "cs"+i.toString()+j.toString();
-    struct = <div className="app-card-tabuleiro-casa" id={padraoId} key={"0k"+i+"-"+j}>
-      <img id={"pcimg"+i.toString()+j.toString()}/>
+    padraoId = i[k].toString()+j.toString();
+    struct = <div className="app-card-tabuleiro-casa" id={"cs"+padraoId} key={"0k"+padraoId}>
+      <img className="app-card-tabuleiro-casa-img" id={"pcimg"+padraoId}/>
     </div>;  
+
     casasTabuleiro.push(struct);
 
     identificadores.push(
       [
         padraoId.slice(0, 1), 
-        padraoId.slice(1, 2), 
-        padraoId.slice(2, 3), 
-        padraoId.slice(3, 4)
+        padraoId.slice(1, 2)
       ]
     );
 
   }
 }
+
 
 const Tabuleiro = () => {
   let struct = casasTabuleiro.map(casa => {

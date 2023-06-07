@@ -1,12 +1,12 @@
 /* Fontes de Texto */
 @font-face {
   font-family: "Nunito_Sans_Regular";
-  src: url(./assets/fonts/NunitoSans-Regular.ttf);
+  src: url(../fonts/NunitoSans-Regular.ttf);
 }
 
 @font-face {
   font-family: "Titulium_Web_Regular";
-  src: url(./assets/fonts/TitilliumWeb-Regular.ttf);
+  src: url(../fonts/TitilliumWeb-Regular.ttf);
 }
 
 /* Animações */
@@ -67,7 +67,7 @@ html {
   box-shadow: #111111 0px 1px 6px;
   position: -webkit-sticky;
   position: sticky;
-  z-index: 1;
+  z-index: 2;
   top: 0;
 
   animation: animacao-titulo 1.2s forwards;
@@ -117,6 +117,7 @@ html {
   flex-wrap: wrap;
   margin: 1.5vw 0.6vw;
   box-shadow: #111111 0px 1px 6px;
+  z-index: 1;
 }
 
 .app-card-tabuleiro-casa {
@@ -125,34 +126,6 @@ html {
   height: 50px;
 }
 
-#cs11, #cs13, #cs15, #cs17,
-#cs22, #cs24, #cs26, #cs28, 
-#cs31, #cs33, #cs35, #cs37,
-#cs42, #cs44, #cs46, #cs48, 
-#cs51, #cs53, #cs55, #cs57,
-#cs62, #cs64, #cs66, #cs68, 
-#cs71, #cs73, #cs75, #cs77,
-#cs82, #cs84, #cs86, #cs88 {
-  background-color: #f0f0f0;
-}
+/* .app-card-tabuleiro-casa-img {
 
-#cs12, #cs14, #cs16, #cs18,
-#cs21, #cs23, #cs25, #cs27, 
-#cs32, #cs34, #cs36, #cs38,
-#cs41, #cs43, #cs45, #cs47, 
-#cs52, #cs54, #cs56, #cs58,
-#cs61, #cs63, #cs65, #cs67, 
-#cs72, #cs74, #cs76, #cs78,
-#cs81, #cs83, #cs85, #cs87 {
-  background-color: #009a00;
-}
-
-/* Opcional */
-@keyframes animacao-peca-movimento-diagonal-esquerda-superior { }
-@keyframes animacao-peca-movimento-diagonal-esquerda-inferior { }
-@keyframes animacao-peca-movimento-diagonal-direita-superior { }
-@keyframes animacao-peca-movimento-diagonal-direita-inferior { }
-@keyframes animacao-peca-movimento-para-frente { }
-@keyframes animacao-peca-movimento-para-tras { }
-@keyframes animacao-cards-esquerda { }
-@keyframes animacao-cards-direita { }
+} */
