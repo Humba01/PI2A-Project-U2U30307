@@ -27,7 +27,9 @@ const Tabuleiro = () => {
   });
   
   return (
-    <div className="app-card-tabuleiro" id="tabuleiro">{struct}</div>
+    <div className="app-card-tabuleiro" id="tabuleiro">
+      {struct}
+    </div>
   )
 }
   

@@ -11,8 +11,9 @@ let timer1 = setTimeout(() => {
         indicadores.style.marginLeft = "10px";
         indicadores.style.marginTop = "10px";
         indicadores.style.zIndex = "1";
+        indicadores.style.display = "flex";
         indicadores.style.position = "absolute";
-        indicadores.style.backgroundColor = "#01010144";
+        indicadores.style.backgroundColor = "#442f14cc";
         indicadores.style.visibility = "hidden";
         indicadores.id = "ind"+i[k].toString()+j.toString();
 
