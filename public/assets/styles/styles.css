@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 /* Fontes de Texto */
 @font-face {
   font-family: "Nunito_Sans_Regular";
@@ -9,42 +11,45 @@
   src: url(../fonts/TitilliumWeb-Regular.ttf);
 }
 
-/* Animações */
-@keyframes animacao-titulo {
-  0% {
-    margin-top: -6vw;
-    transition: ease-in 0.5s;
-  }
-  
-  90% {
-    background-color: #ffffff00;
-    transition: ease-in 2s;
-  }
-
-  100% {
-    margin-top: 0.5vw;
-    height: auto;
-    background-color: var(--cor-sec-pagina);
-  }
+@font-face {
+  font-family: "FreeSerifRegular";
+  src: url(../fonts/FreeSerif-4aeK.ttf);
 }
 
 /* Estilizações */
 :root {
-  --cor-base-pagina: #1f1f1f;
-  --cor-sec-pagina: #393939;
+  --cor-primaria-pagina: #1f1f1f;
+  --cor-secundaria-pagina: #2f2f2f;
+  --cor-primaria-tabuleiro: #fce2af;
+  --cor-secundaria-tabuleiro: #872a14;
 }
 
 /* CSS Reset */
-html, body, header, head, footer, h1, h2, h3, h4, h5, h6, div, section, textarea, p, span {
+html,
+body,
+header,
+head,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+section,
+textarea,
+p,
+span {
   margin: 0;
   padding: 0;
 }
 
+/* CSS Defines */
 html {
-  background-color: var(--cor-base-pagina);
+  background-color: var(--cor-primaria-pagina);
 }
 
-/* Lista de Classes */
 .app-conteiner {
   display: inline-block;
 }
@@ -59,18 +64,18 @@ html {
 
 .app-cabecalho {
   display: flex;
-  background-color: var(--cor-sec-pagina);
+  background-color: var(--cor-secundaria-pagina);
   justify-content: center;
-  margin: 1vw 1.5vw;
-  width: 90%;
+  margin-left: 0.5vw;
+  margin-top: 1.2vw;
+  margin-bottom: 1.2vw;
+  width: 96%;
   border-radius: 3px;
   box-shadow: #111111 0px 1px 6px;
   position: -webkit-sticky;
   position: sticky;
   z-index: 2;
   top: 0;
-
-  animation: animacao-titulo 1.2s forwards;
 }
 
 .app-cabecalho-titulo {
@@ -111,64 +116,145 @@ html {
   box-shadow: #111111 0px 1px 6px;
 }
 
-.app-card-tabuleiro { 
-  display: inline-flex;
-  width: calc(8*50px);
-  flex-wrap: wrap;
-  margin: 1.5vw 0.6vw;
-  box-shadow: #111111 0px 1px 6px;
-  z-index: 1;
+/* CSS Document */
+/* TABULEIRO*/
+#tabuleiro {
+  width: calc(8.8*50px);
+  height: calc(8.8*50px);
+  margin-left: 20px;
 }
 
-.app-card-tabuleiro-casa {
-  display: inline-flex;
+#tabuleiro div {
   width: 50px;
   height: 50px;
-  z-index: 3;
+  float: left;
+  font-size: 44px;
+  text-align: center;
+  padding-left: 2px;
+  cursor: pointer;
+  border: #111111 0.5px solid;
+  font-family: "FreeSerifRegular";
 }
 
-.app-card-tabuleiro-casa-img {
-  z-index: 2;
+#t11,
+#t13,
+#t15,
+#t17,
+#t22,
+#t24,
+#t26,
+#t28,
+#t31,
+#t33,
+#t35,
+#t37,
+#t42,
+#t44,
+#t46,
+#t48,
+#t51,
+#t53,
+#t55,
+#t57,
+#t62,
+#t64,
+#t66,
+#t68,
+#t71,
+#t73,
+#t75,
+#t77,
+#t82,
+#t84,
+#t86,
+#t88 {
+  background-color: var(--cor-primaria-tabuleiro);
 }
 
-.app-card-tabuleiro-selection-side {
-  display: flex;
-  background-color: #2f2f2f;
-  box-shadow: #111111 2px 2px 6px;
+#t12,
+#t14,
+#t16,
+#t18,
+#t21,
+#t23,
+#t25,
+#t27,
+#t32,
+#t34,
+#t36,
+#t38,
+#t41,
+#t43,
+#t45,
+#t47,
+#t52,
+#t54,
+#t56,
+#t58,
+#t61,
+#t63,
+#t65,
+#t67,
+#t72,
+#t74,
+#t76,
+#t78,
+#t81,
+#t83,
+#t85,
+#t87 {
+  background-color: var(--cor-secundaria-tabuleiro);
+}
+
+#fundo {
+  background: #000;
+  position: fixed;
+  width: calc(8.59*50px);
+  height: calc(8.59*50px);
+  z-index: 999;
+  top: 4.2vw;
+  left: 1.6vw;
+  opacity: 0.50;
+  -moz-opacity: 0.50;
+  filter: alpha(opacity=50);
+}
+
+.app-tabuleiro-escolhe {
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  display: none;
+  z-index: 1000;
+  background: var(--cor-secundaria-pagina);
+  border: #000 solid 1px;
   border-radius: 4px;
-  z-index: 5;
-  
-  position: absolute;
-  left: 18%;
-  top: 38%;
 }
 
-.app-card-tabuleiro-selection-side-option {
-  display: flex;
-  justify-content: space-around;
-  margin: 0.6vw 0.4vw;
-  border: #666666 1px solid;
-  border-radius: 2px;
-}
-
-.app-card-tabuleiro-selection-side-option:hover {
-  background-color: #393939;
-  transition: ease-in-out 0.5s all backwards; 
-}
-
-.app-card-tabuleiro-selection-side-option-img {
-  display: flex;
+.app-tabuleiro-escolhe div {
+  width: 70px;
+  height: 70px;
+  float: left;
+  margin: 1px;
+  font-size: 48px;
+  text-align: center;
+  float: left;
+  margin: 5px;
   cursor: pointer;
 }
 
-.app-card-tabuleiro-state {
-  display: flex;
-  background-color: #1f1f1fdd;
-  width: calc(8*50px);
-  height: calc(8*50px);
-  z-index: 4;
+#escolhecor-inicio {
+  display: block;
+  left: 12%;
+  top: 35%;
+}
 
+.tabuleiro-indicadores {
+  background-color: #442f14cc;
+  border-radius: 20%;
+  display: flex;
+  height: 10px;
   position: absolute;
-  left: 7.5%;
-  top: 11.75%;
+  visibility: visible;
+  z-index: 1;
+  width: 10px;
 }

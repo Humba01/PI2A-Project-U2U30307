@@ -1,459 +1,306 @@
-let mapaTabuleiro = [], mapaIndicadores = [], eA, eB, auxA = [], auxB = [];
+// Solucionador de incompatibilidade com o ReactJS
+setTimeout(() => {
 
-setTimeout(() => { 
+	const raizTabuleiro = document.getElementById('raiz-tabuleiro')
+		, escolhecorBranco = document.getElementById('escolhecor-op-branco')
+		, escolhecorPreto = document.getElementById('escolhecor-op-preto')
+		, escolheopBrancoRainha = document.getElementById('eboprainha')
+		, escolheopBrancoTorre = document.getElementById('eboptorre')
+		, escolheopBrancoCavalo = document.getElementById('ebopcavalo')
+		, escolheopBrancoBispo = document.getElementById('ebopbispo')
+		, escolheopPretoRainha = document.getElementById('epoprainha')
+		, escolheopPretoTorre = document.getElementById('epoptorre')
+		, escolheopPretoCavalo = document.getElementById('epopcavalo')
+		, escolheopPretoBispo = document.getElementById('epopbispo')
+		, t11 = document.getElementById('t11')
+		, t12 = document.getElementById('t12')
+		, t13 = document.getElementById('t13')
+		, t14 = document.getElementById('t14')
+		, t15 = document.getElementById('t15')
+		, t16 = document.getElementById('t16')
+		, t17 = document.getElementById('t17')
+		, t18 = document.getElementById('t18')
+		, t21 = document.getElementById('t21')
+		, t22 = document.getElementById('t22')
+		, t23 = document.getElementById('t23')
+		, t24 = document.getElementById('t24')
+		, t25 = document.getElementById('t25')
+		, t26 = document.getElementById('t26')
+		, t27 = document.getElementById('t27')
+		, t28 = document.getElementById('t28')
+		, t31 = document.getElementById('t31')
+		, t32 = document.getElementById('t32')
+		, t33 = document.getElementById('t33')
+		, t34 = document.getElementById('t34')
+		, t35 = document.getElementById('t35')
+		, t36 = document.getElementById('t36')
+		, t37 = document.getElementById('t37')
+		, t38 = document.getElementById('t38')
+		, t41 = document.getElementById('t41')
+		, t42 = document.getElementById('t42')
+		, t43 = document.getElementById('t43')
+		, t44 = document.getElementById('t44')
+		, t45 = document.getElementById('t45')
+		, t46 = document.getElementById('t46')
+		, t47 = document.getElementById('t47')
+		, t48 = document.getElementById('t48')
+		, t51 = document.getElementById('t51')
+		, t52 = document.getElementById('t52')
+		, t53 = document.getElementById('t53')
+		, t54 = document.getElementById('t54')
+		, t55 = document.getElementById('t55')
+		, t56 = document.getElementById('t56')
+		, t57 = document.getElementById('t57')
+		, t58 = document.getElementById('t58')
+		, t61 = document.getElementById('t61')
+		, t62 = document.getElementById('t62')
+		, t63 = document.getElementById('t63')
+		, t64 = document.getElementById('t64')
+		, t65 = document.getElementById('t65')
+		, t66 = document.getElementById('t66')
+		, t67 = document.getElementById('t67')
+		, t68 = document.getElementById('t68')
+		, t71 = document.getElementById('t71')
+		, t72 = document.getElementById('t72')
+		, t73 = document.getElementById('t73')
+		, t74 = document.getElementById('t74')
+		, t75 = document.getElementById('t75')
+		, t76 = document.getElementById('t76')
+		, t77 = document.getElementById('t77')
+		, t78 = document.getElementById('t78')
+		, t81 = document.getElementById('t81')
+		, t82 = document.getElementById('t82')
+		, t83 = document.getElementById('t83')
+		, t84 = document.getElementById('t84')
+		, t85 = document.getElementById('t85')
+		, t86 = document.getElementById('t86')
+		, t87 = document.getElementById('t87')
+		, t88 = document.getElementById('t88');
 
-  // mapeando tabuleiro e seus indicadores
-  for(let k = 0; k < i.length; k++) {
-    
-    for(let j = 1; j < 9; j++) {
-      let sensor = j % 8; 
-      
-      eA = document.getElementById("pcimg"+i[k].toString()+j.toString());
-      eB = document.getElementById("ind"+i[k].toString()+j.toString());
-      auxA.push(eA);
-      auxB.push(eB)
-      
-      if(sensor == 0) {
-        mapaTabuleiro.push(auxA);
-        mapaIndicadores.push(auxB);
-        auxA = [];
-        auxB = [];
-      }
-    
-    }
-    
-  }
+		// propriedades dos elementos
+			// 01
+		raizTabuleiro.onload = inicia_jogo();
 
-  let sensoronoff = 0;
+			// 02
+		escolhecorBranco.onclick = escolhecor_incio('branco');
 
-  function criaOuvinteClique(i, j) { 
-    
-    return (mapaTabuleiro[i][j].addEventListener("click", () => {
-  
-      if(sensoronoff == 0) {
-        mapaIndicadores[i][j].style.visibility = "visible";
-        sensoronoff = 1;
-      } else {
-        mapaIndicadores[i][j].style.visibility = "hidden";
-        sensoronoff = 0;
-      }
+			// 03
+		escolhecorPreto.onclick = escolhecor_incio('preto');
 
-      // verifica se existe uma peça ao redor
+			// 04
+		escolheopBrancoRainha.onclick = escolhe('rainha','branco');
 
-        /** 
-         * 
-         * if(mapaTabuleiro[i][j]) { }
-         *  
-         */
+			// 05
+		escolheopBrancoTorre.onclick = escolhe('torre','branco');
 
-      // logica de movimento (peoes)
-        
-        /**
-         * => primeira jogada do tabuleiro;
-         * 
-         * mapaIndicadores[i][j].style.visibility = "visible"; 
-         * mapaIndicadores[i-1][j].style.visibility = "visible";
-         * 
-         * => segunda jogada do tabuleiro;
-         * 
-         * mapaIndicadores[i][j].style.visibility = "visible";
-         * mapaIndicadores[i-1][j].style.visibility = "visible";
-         * mapaIndicadores[i-2][j].style.visibility = "visible";
-         *  
-         */
+			// 06
+		escolheopBrancoCavalo.onclick = escolhe('cavalo','branco');
 
-      // logica de movimento (torres)
+			// 07
+		escolheopBrancoBispo.onclick = escolhe('bispo','branco');
 
-        /**
-         * 
-         * mapaIndicadores[i][j].style.visibility = "visible";
-         * mapaIndicadores[i-1][j].style.visibility = "visible";
-         * mapaIndicadores[i-2][j].style.visibility = "visible";
-         * mapaIndicadores[i-3][j].style.visibility = "visible";
-         * mapaIndicadores[i-4][j].style.visibility = "visible";
-         * mapaIndicadores[i-5][j].style.visibility = "visible";
-         * mapaIndicadores[i-6][j].style.visibility = "visible";
-         * mapaIndicadores[i][j-1].style.visibility = "visible";
-         * mapaIndicadores[i][j-2].style.visibility = "visible";
-         * mapaIndicadores[i][j-3].style.visibility = "visible";
-         * mapaIndicadores[i][j-4].style.visibility = "visible";
-         * mapaIndicadores[i][j-5].style.visibility = "visible";
-         * mapaIndicadores[i][j-6].style.visibility = "visible";
-         * 
-         */
+			// 08
+		escolheopPretoRainha.onclick = escolhe('rainha','preto');
 
-      // logica de movimento (cavalos)
+			// 09
+		escolheopPretoTorre.onclick = escolhe('torre','preto');
 
-        /**
-         * 
-         * mapaIndicadores[i][j].style.visibility = "visible";
-         * mapaIndicadores[i][j-1].style.visibility = "visible";
-         * mapaIndicadores[i-1][j-1].style.visibility = "visible";
-         * mapaIndicadores[i-2][j-1].style.visibility = "visible";
-         * mapaIndicadores[i][j+1].style.visibility = "visible";
-         * mapaIndicadores[i-1][j+1].style.visibility = "visible";
-         * mapaIndicadores[i-2][j+1].style.visibility = "visible";
-         * 
-         */
+			// 10
+		escolheopPretoCavalo.onclick = escolhe('cavalo','preto');
 
-      // logica de movimento (bispos)
+			// 11
+		escolheopPretoBispo.onclick = escolhe('bispo','preto');
 
-        /**
-         * 
-         * mapaIndicadores[i][j].style.visibility = "visible";
-         * mapaIndicadores[i-1][j-1].style.visibility = "visible";
-         * mapaIndicadores[i-2][j-2].style.visibility = "visible";
-         * mapaIndicadores[i-3][j-3].style.visibility = "visible";
-         * mapaIndicadores[i-4][j-4].style.visibility = "visible";
-         * mapaIndicadores[i-5][j-5].style.visibility = "visible";
-         * mapaIndicadores[i+1][j+1].style.visibility = "visible";
-         * mapaIndicadores[i+2][j+2].style.visibility = "visible";
-         * mapaIndicadores[i+3][j+3].style.visibility = "visible";
-         * mapaIndicadores[i+4][j+4].style.visibility = "visible";
-         * mapaIndicadores[i+5][j+5].style.visibility = "visible";
-         * 
-         */
+			// 12
+		t11.onclick = seleciona(1,1);
 
-      // logica de movimento (reis)
-      // logica de movimento (rainhas)
-  
-    }));
+			// 13
+		t12.onclick = seleciona(1,2);
 
-  }
+			// 14
+		t13.onclick = seleciona(1,3);
 
-  function removeOuvinteClique(i, j) {
-    mapaTabuleiro[i][j].removeEventListener("click", () => {
-      mapaIndicadores[i][j].style.visibility = "hidden";
-      sensoronoff = 0;
-    });
-  }
+			// 15
+		t14.onclick = seleciona(1,4);
 
-  let opcaoSelecaoPecasPretas = document.getElementById("op_preta");
-  let opcaoSelecaoPecasBrancas = document.getElementById("op_branca");
+			// 16
+		t15.onclick = seleciona(1,5);
 
-  // if(mapaTabuleiro[i][j].src != null) {
-  //   removeOuvinteClique(i, j);
-  // };
+			// 17
+		t16.onclick = seleciona(1,6);
 
-  criaOuvinteClique(0, 0);
-  criaOuvinteClique(0, 1);
-  criaOuvinteClique(0, 2);
-  criaOuvinteClique(0, 3);
-  criaOuvinteClique(0, 4);
-  criaOuvinteClique(0, 5);
-  criaOuvinteClique(0, 6);
-  criaOuvinteClique(0, 7);
-  criaOuvinteClique(1, 0);
-  criaOuvinteClique(1, 1);
-  criaOuvinteClique(1, 2);
-  criaOuvinteClique(1, 3);
-  criaOuvinteClique(1, 4);
-  criaOuvinteClique(1, 5);
-  criaOuvinteClique(1, 6);
-  criaOuvinteClique(1, 7);
-  criaOuvinteClique(2, 0);
-  criaOuvinteClique(2, 1);
-  criaOuvinteClique(2, 2);
-  criaOuvinteClique(2, 3);
-  criaOuvinteClique(2, 4);
-  criaOuvinteClique(2, 5);
-  criaOuvinteClique(2, 6);
-  criaOuvinteClique(2, 7);
-  criaOuvinteClique(3, 0);
-  criaOuvinteClique(3, 1);
-  criaOuvinteClique(3, 2);
-  criaOuvinteClique(3, 3);
-  criaOuvinteClique(3, 4);
-  criaOuvinteClique(3, 5);
-  criaOuvinteClique(3, 6);
-  criaOuvinteClique(3, 7);
-  criaOuvinteClique(4, 0);
-  criaOuvinteClique(4, 1);
-  criaOuvinteClique(4, 2);
-  criaOuvinteClique(4, 3);
-  criaOuvinteClique(4, 4);
-  criaOuvinteClique(4, 5);
-  criaOuvinteClique(4, 6);
-  criaOuvinteClique(4, 7);
-  criaOuvinteClique(5, 0);
-  criaOuvinteClique(5, 1);
-  criaOuvinteClique(5, 2);
-  criaOuvinteClique(5, 3);
-  criaOuvinteClique(5, 4);
-  criaOuvinteClique(5, 5);
-  criaOuvinteClique(5, 6);
-  criaOuvinteClique(5, 7);
-  criaOuvinteClique(6, 0);
-  criaOuvinteClique(6, 1);
-  criaOuvinteClique(6, 2);
-  criaOuvinteClique(6, 3);
-  criaOuvinteClique(6, 4);
-  criaOuvinteClique(6, 5);
-  criaOuvinteClique(6, 6);
-  criaOuvinteClique(6, 7);
-  criaOuvinteClique(7, 0);
-  criaOuvinteClique(7, 1);
-  criaOuvinteClique(7, 2);
-  criaOuvinteClique(7, 3);
-  criaOuvinteClique(7, 4);
-  criaOuvinteClique(7, 5);
-  criaOuvinteClique(7, 6);
-  criaOuvinteClique(7, 7);
+			// 18
+		t17.onclick = seleciona(1,7);
 
-  for(let a = 0; a < 8; a++){
-    
-    for(let b = 0; b < 8; b++){
-  
-      console.log(mapaTabuleiro[a][b]);
+			// 19
+		t18.onclick = seleciona(1,8);
 
-      if(mapaTabuleiro[a][b].src == ""){
-        mapaTabuleiro[a][b].src = "./assets/imgs/another/120px-invisible_square.png";
-        // mapaTabuleiro[a][b].style.visibility = "hidden";
-      }
+			// 20
+		t21.onclick = seleciona(2,1);
 
-    }
-  
-  }
+			// 21
+		t22.onclick = seleciona(2,2);
 
-}, 1202);
+			// 22
+		t23.onclick = seleciona(2,3);
 
-/**
-    if(peca[x][y]['peca']=='peao'){
-		if(peca[x][y]['cor']=="branco"){
+			// 23
+		t24.onclick = seleciona(2,4);
 
-				if(!peca[x-1][y]['peca']){
-					possivel(x-1,y);
-				}if(y-1>0 && peca[x-1][y-1]['peca']){
-					possivel(x-1,y-1);						
-				}
-				if(y+1<9 && peca[x-1][y+1]['peca']){
-					possivel(x-1,y+1);					
-				}					
+			// 24
+		t25.onclick = seleciona(2,5);
 
-				if(x==7){				
-					if(!peca[x-2][y]['peca'] && !peca[x-1][y]['peca']){
-						possivel(x-2,y);
-					}
-				}
+			// 25
+		t26.onclick = seleciona(2,6);
 
-		}
-		
-		
-		if(peca[x][y]['cor']=="preto"){
-				
-				if(!peca[x+1][y]['peca']){
-					possivel(x+1,y);
-				}if(y-1>0 && peca[x+1][y-1]['peca']){
-					possivel(x+1,y-1);						
-				}
-				if(y+1<9 && peca[x+1][y+1]['peca']){
-					possivel(x+1,y+1);					
-				}					
+			// 26
+		t27.onclick = seleciona(2,7);
 
-				if(x==2){
-				
-					if(!peca[x+2][y]['peca'] && !peca[x+1][y]['peca']){
-						possivel(x+2,y);
-					}
-		
-				}
+			// 27
+		t28.onclick = seleciona(2,8);
 
-		}
-	}
-///////////////////////////////////////////////////////////////////////////////////////FIM PEAO//////////////////////////////
+			// 28
+		t31.onclick = seleciona(3,1);
 
-//////////////////////////////////////////////////////////////////////////////////////CAVALO ////////////////////////////////
+			// 29
+		t32.onclick = seleciona(3,2);
 
-	if(peca[x][y]['peca']=='cavalo'){
-		
-		possivel(x-1,y-2);
-		possivel(x+1,y+2);
-		possivel(x+1,y-2);
-		possivel(x-1,y+2);
-		possivel(x-2,y-1);
-		possivel(x+2,y+1);
-		possivel(x+2,y-1);
-		possivel(x-2,y+1);
-		
-	}
-//////////////////////////////////////////////////////////////////////////////////////FIM CAVALO ////////////////////////////
+			// 30
+		t33.onclick = seleciona(3,3);
 
-//////////////////////////////////////////////////////////////////////////////////////REI ///////////////////////////////////
-	if(peca[x][y]['peca']=='rei'){
-		possivel(x-1,y);
-		possivel(x,y-1);
-		possivel(x-1,y-1);
-		possivel(x+1,y);
-		possivel(x,y+1);
-		possivel(x+1,y+1);
-		possivel(x-1,y+1);
-		possivel(x+1,y-1);
-	}
-//////////////////////////////////////////////////////////////////////////////////////FIM REI ////////////////////////////
+			// 31
+		t34.onclick = seleciona(3,4);
 
+			// 32
+		t35.onclick = seleciona(3,5);
 
-//////////////////////////////////////////////////////////////////////////////////////TORRE ///////////////////////////////////
-	if(peca[x][y]['peca']=='torre'){
-		
-		for(i=1;possivel(x-i,y);i++);
-		for(i=1;possivel(x+i,y);i++);
-		for(i=1;possivel(x,y-i);i++);
-		for(i=1;possivel(x,y+i);i++);
-	}
-//////////////////////////////////////////////////////////////////////////////////////FIM TORRE ////////////////////////////
+			// 33
+		t36.onclick = seleciona(3,6);
 
-//////////////////////////////////////////////////////////////////////////////////////BISPO ///////////////////////////////////
-	if(peca[x][y]['peca']=='bispo'){
-		
-		for(i=1;possivel(x-i,y-i);i++);
-		for(i=1;possivel(x+i,y+i);i++);
-		for(i=1;possivel(x-i,y+i);i++);
-		for(i=1;possivel(x+i,y-i);i++);
-	}
-//////////////////////////////////////////////////////////////////////////////////////FIM BISPO ////////////////////////////
+			// 34
+		t37.onclick = seleciona(3,7);
 
-//////////////////////////////////////////////////////////////////////////////////////RAINHA ///////////////////////////////////
-	if(peca[x][y]['peca']=='rainha'){
-		
-		for(i=1;possivel(x-i,y-i);i++);
-		for(i=1;possivel(x+i,y+i);i++);
-		for(i=1;possivel(x-i,y+i);i++);
-		for(i=1;possivel(x+i,y-i);i++);
-		for(i=1;possivel(x-i,y);i++);
-		for(i=1;possivel(x+i,y);i++);
-		for(i=1;possivel(x,y-i);i++);
-		for(i=1;possivel(x,y+i);i++);
-		
-	}
-//////////////////////////////////////////////////////////////////////////////////////FIM RAINHA ////////////////////////////
+			// 35
+		t38.onclick = seleciona(3,8);
 
+			// 36
+		t41.onclick = seleciona(4,1);
 
+			// 37
+		t42.onclick = seleciona(4,2);
 
-function possivel(px,py){
-		if(px>0 && px <9 && py>0 && py <9 && peca[px][py]['cor']!= movimenta['selecionada']['cor']){
-			document.getElementById('t'+(px)+(py)).style.backgroundColor = "#3C9"; //muda cor de fundo
-			possiveis[c] = "t"+(px)+(py); c++;
-			
-			if(!peca[px][py]['peca']){
-				return true;
-			}
-		}else{
-			return false;
-		}
+			// 38
+		t43.onclick = seleciona(4,3);
 
-	
-	}
+			// 39
+		t44.onclick = seleciona(4,4);
 
-	return c;
-}
+			// 40
+		t45.onclick = seleciona(4,5);
 
-function volta_fundo(){
-	var cf;
-	for(cf=0;cf<possiveis.length;cf++){
-		document.getElementById(possiveis[cf]).style.backgroundColor = "";
-	}	
-}
+			// 41
+		t46.onclick = seleciona(4,6);
 
-function verifica_possivel(x,y,c){
-	var pode=0;
-	var cp;
-	var div = "t"+x+y;
-	
-	for(cp=1;cp<c;cp++){
-		
-		if(possiveis[cp]==div){
-			pode ++;
-		}
-		if(pode>0){
-			return 1;
-		}
-	}	
-	
-}
+			// 42
+		t47.onclick = seleciona(4,7);
 
-function seleciona(x,y){
-	
-		
-		if((movimenta['selecionada']['x']==0 || peca[x][y]['cor'] == movimenta['selecionada']['cor']) && peca[x][y]['cor']==vez){
-			if(movimenta['selecionada']['x']!=0){
-				volta_fundo(); //volta a cor de fundo normal
-			}
-			if(peca[x][y]['peca']){ //se tiver uma peca nessa posição
-				movimenta['selecionada']['x'] = x;	//recebe x selecionado
-				movimenta['selecionada']['y'] = y;  //recebe y selecionado
-				movimenta['selecionada']['peca'] = peca[x][y]['peca']; //recebe a peca selecionada
-				movimenta['selecionada']['cor'] = peca[x][y]['cor'];	//recebe a cor selecionada
-				
-				cont_possiveis = possiveis_movimentos();	
-			}
-			
-		}else if(verifica_possivel(x,y,cont_possiveis)){ //se for segundo clique e a cor da peca destino for diferente da selecionada
-			
-			if(peca[x][y]['peca']=="rei"){
-				alert(movimenta['selecionada']['cor']+" venceu (:");
-				
-			}
-			
-			//Pra trocar de peça quando o peão chegar do outro lado
-			if(movimenta['selecionada']['peca']=='peao' && movimenta['selecionada']['cor']=='branco' && x==1){
-				document.getElementById('escolhebranco').style.display='block';	
-				document.getElementById('fundo').style.display='block';	
-				xe=x;ye=y;
-			}
-			if(movimenta['selecionada']['peca']=='peao' && movimenta['selecionada']['cor']=='preto' && x==8){
-				document.getElementById('escolhepreto').style.display='block';	
-				document.getElementById('fundo').style.display='block';					
-				xe=x;ye=y;
-			}
-			
-			if(peca[x][y]['cor'] != movimenta['selecionada']['cor']){
-				movimenta['destino']['x'] =x;	//recebe o x do destino(segundo clique)
-				movimenta['destino']['y'] =y;  //recebe y do destino(segundo clique)
-				
-				if(peca[x][y]['peca']){  //se tiver alguma peca nessa posição
-					movimenta['destino']['peca'] = peca[x][y]['peca'];	//destino recebe a peca selecionada
-					movimenta['destino']['cor'] = peca[x][y]['cor'];	//destino recebe a cor selecionada
-				}
-				
-				
-				document.getElementById("t"+movimenta['selecionada']['x']+""+movimenta['selecionada']['y']).innerHTML = ""; //selcionada fica sem imagem
-				document.getElementById("t"+x+""+y).innerHTML = il[movimenta['selecionada']['cor']][movimenta['selecionada']['peca']]; //destino recebe a imagem da peça selecinada
-				peca[x][y]['peca']=movimenta['selecionada']['peca'];	//posicao destino recebe a peca
-				peca[x][y]['cor']=movimenta['selecionada']['cor'];		//posicao destino recebe a cor
-								
-				peca[movimenta['selecionada']['x']][movimenta['selecionada']['y']]['peca'] = false;		//peca selecionada recebe 0
-				peca[movimenta['selecionada']['x']][movimenta['selecionada']['y']]['cor'] = false;		//cor selecionada recebe 0
-					
-				movimenta['selecionada']['x'] =0;	//selecionada x recebe 0 (pra na proxima ver q é o primeiro movimento)
-				movimenta['selecionada']['y'] =0;	//selecionada y recebe 0 (pra na proxima ver q é o primeiro movimento)
-				movimenta['selecionada']['peca']="0";	//selecionada peca recebe 0 (pra na proxima ver q é o primeiro movimento)
-				movimenta['selecionada']['cor']="0";	//selecionada cor recebe 0 (pra na proxima ver q é o primeiro movimento)
-				
-				
-			}
+			// 43
+		t48.onclick = seleciona(4,8);
 
-			volta_fundo(); //volta a cor de fundo normal
-			
-			if(vez=="branco"){vez="preto";}else{vez="branco";} //troca a vez
+			// 44
+		t51.onclick = seleciona(5,1);
 
-		}
-		
-		
+			// 45
+		t52.onclick = seleciona(5,2);
 
-	
-}
+			// 46
+		t53.onclick = seleciona(5,3);
 
-	function escolhe(pecae,core){
-			peca[xe][ye]['peca']=pecae;
-			document.getElementById("t"+xe+""+ye).innerHTML = il[core][pecae];
-			document.getElementById('escolhe'+core).style.display='none';
-			document.getElementById('fundo').style.display='none';
-	}
+			// 47
+		t54.onclick = seleciona(5,4);
 
-	function escolhecor_incio(cor){
-			document.getElementById('escolhecor-inicio').style.display='none';
-			document.getElementById('fundo').style.display='none';
-			vez = cor; //vez de quem jogar
+			// 48
+		t55.onclick = seleciona(5,5);
 
-	}
- */
+			// 49
+		t56.onclick = seleciona(5,6);
+
+			// 50
+		t57.onclick = seleciona(5,7);
+
+			// 51
+		t58.onclick = seleciona(5,8);
+
+			// 52
+		t61.onclick = seleciona(6,1);
+
+			// 53
+		t62.onclick = seleciona(6,2);
+
+			// 54
+		t63.onclick = seleciona(6,3);
+
+			// 55
+		t64.onclick = seleciona(6,4);
+
+			// 56
+		t65.onclick = seleciona(6,5);
+
+			// 57
+		t66.onclick = seleciona(6,6);
+
+			// 58
+		t67.onclick = seleciona(6,7);
+
+			// 59
+		t68.onclick = seleciona(6,8);
+
+			// 60
+		t71.onclick = seleciona(7,1);
+
+			// 61
+		t72.onclick = seleciona(7,2);
+
+			// 62
+		t73.onclick = seleciona(7,3);
+
+			// 63
+		t74.onclick = seleciona(7,4);
+
+			// 64
+		t75.onclick = seleciona(7,5);
+
+			// 65
+		t76.onclick = seleciona(7,6);
+
+			// 66
+		t77.onclick = seleciona(7,7);
+
+			// 67
+		t78.onclick = seleciona(7,8);
+
+			// 68
+		t81.onclick = seleciona(8,1);
+
+			// 69
+		t82.onclick = seleciona(8,2);
+
+			// 70
+		t83.onclick = seleciona(8,3);
+
+			// 71
+		t84.onclick = seleciona(8,4);
+
+			// 72
+		t85.onclick = seleciona(8,5);
+
+			// 73
+		t86.onclick = seleciona(8,6);
+
+			// 74
+		t87.onclick = seleciona(8,7);
+
+			// 75
+		t88.onclick = seleciona(8,8);
+
+}, 1500);

@@ -4,10 +4,7 @@ const Application = () => {
   return (
     <div className="app-structure">
       <Cabecalho />
-      <SelectionSide />
-      <TabuleiroState />
-      <Organizer />
-      <Grafo />
+      {/* <Tabuleiro /> */}
     </div>
   )
 }
