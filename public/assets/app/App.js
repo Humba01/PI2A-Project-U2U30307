@@ -1,13 +1,11 @@
-let appRoot = document.getElementById('appRoot');
+let appRootCabecalho = document.getElementById('appRootCabecalho');
 
 const Application = () => {
   return (
     <div className="app-structure">
       <Cabecalho />
-      {/* <Conteiner />
-      <Grafos /> */}
     </div>
   )
 }
 
-ReactDOM.render(<Application />, appRoot);
+ReactDOM.render(<Application />, appRootCabecalho);
