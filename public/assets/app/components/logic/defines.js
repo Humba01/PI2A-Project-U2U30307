@@ -1,129 +1,107 @@
 // Ajustes para serem realizados:
-  // A. Arrumar peças brancas.
-  // B. Arrumar permanência da partida.
-  // C. Arrumar Interfaces de Grafos e Lances.
-  // D. Arrumar Carregamento da Página.
+  // ✔️OK | A. Arrumar estilo das peças do tabuleiro.
+  // ⚠️Verificar | B. Arrumar permanência da partida.
+  // ✔️OK | C. Arrumar Interfaces de Grafos e Lances.
+  // ✔️OK | D. Arrumar carregamento da página.
+  // ✔️Parcial OK | E. Arrumar Comunicação com o Back-End, dados de transmissão.
+
+// Tela de Carregamento do Projeto
+let telaCarregamento = document.getElementById("appTransitionPage");
+let telaBarraDeProgresso = document.getElementById("appTransitionPageProgressBar");
+let telaProgressoTexto = document.getElementById("appTransitionPageProgressText");
+
+window.addEventListener("load", () => {
+  telaBarraDeProgresso.style.backgroundColor = "#872a14"
+  telaProgressoTexto.textContent = "Carregando";
+  setTimeout(() => {
+    telaBarraDeProgresso.style.backgroundColor = "#2f2f2f";
+    telaProgressoTexto.textContent = "Pronto";
+    setTimeout(() => {
+      telaCarregamento.style.visibility = "hidden";
+    }, 500);
+  }, 2100);
+});
+
+// configurar método POST para responder do back-end
+let response = new XMLHttpRequest();
+  response.open("POST", "http://localhost:3000");
+  response.setRequestHeader("Content-Type", "Debug Requests");
+  response.send();
+
+// variáveis
+let jogada = []
+ ,jogadaTraduzida = "";
 
 function inicia_jogo() {
   vez = "branco"; //vez de quem jogar
 
   //muda a classe das pecas pretas(encima) para mostrar imgens das pecas
   document.getElementById("t11").innerHTML = "&#9820;";
-  document.getElementById("t11").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t12").innerHTML = "&#9822;";
-  document.getElementById("t12").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t13").innerHTML = "&#9821;";
-  document.getElementById("t13").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t14").innerHTML = "&#9819;";
-  document.getElementById("t14").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t15").innerHTML = "&#9818;";
-  document.getElementById("t15").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t16").innerHTML = "&#9821;";
-  document.getElementById("t16").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t17").innerHTML = "&#9822;";
-  document.getElementById("t17").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t18").innerHTML = "&#9820;";
-  document.getElementById("t18").style.textShadow = "#000000 1px 1px 4px";
   
   
   document.getElementById("t21").innerHTML = "&#9823;";
-  document.getElementById("t21").style.textShadow = "#000000 1px 1px 4px";
-  
+
   document.getElementById("t22").innerHTML = "&#9823;";
-  document.getElementById("t22").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t23").innerHTML = "&#9823;";
-  document.getElementById("t23").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t24").innerHTML = "&#9823;";
-  document.getElementById("t24").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t25").innerHTML = "&#9823;";
-  document.getElementById("t25").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t26").innerHTML = "&#9823;";
-  document.getElementById("t26").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t27").innerHTML = "&#9823;";
-  document.getElementById("t27").style.textShadow = "#000000 1px 1px 4px";
-  
+
   document.getElementById("t28").innerHTML = "&#9823;";
-  document.getElementById("t28").style.textShadow = "#000000 1px 1px 4px";
 
   //muda a classe das pecas brancas(embaixo) para mostrar imgens das pecas
   document.getElementById("t81").innerHTML = "&#9820;";
-  document.getElementById("t81").style.color = "#ffffff";
-  document.getElementById("t81").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t82").innerHTML = "&#9822;";
-  document.getElementById("t82").style.color = "#ffffff";
-  document.getElementById("t82").style.textShadow = "#000000 1px 1px 4px";
-  
+
   document.getElementById("t83").innerHTML = "&#9821;";
-  document.getElementById("t83").style.color = "#ffffff";
-  document.getElementById("t83").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t84").innerHTML = "&#9819;";
-  document.getElementById("t84").style.color = "#ffffff";
-  document.getElementById("t84").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t85").innerHTML = "&#9818;";
-  document.getElementById("t85").style.color = "#ffffff";
-  document.getElementById("t85").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t86").innerHTML = "&#9821;";
-  document.getElementById("t86").style.color = "#ffffff";
-  document.getElementById("t86").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t87").innerHTML = "&#9822;";
-  document.getElementById("t87").style.color = "#ffffff";
-  document.getElementById("t87").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t88").innerHTML = "&#9820;";
-  document.getElementById("t88").style.color = "#ffffff";
-  document.getElementById("t88").style.textShadow = "#000000 1px 1px 4px";
 
 
   document.getElementById("t71").innerHTML = "&#9823;";
-  document.getElementById("t71").style.color = "#ffffff";
-  document.getElementById("t71").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t72").innerHTML = "&#9823;";
-  document.getElementById("t72").style.color = "#ffffff";
-  document.getElementById("t72").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t73").innerHTML = "&#9823;";
-  document.getElementById("t73").style.color = "#ffffff";
-  document.getElementById("t73").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t74").innerHTML = "&#9823;";
-  document.getElementById("t74").style.color = "#ffffff";
-  document.getElementById("t74").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t75").innerHTML = "&#9823;";
-  document.getElementById("t75").style.color = "#ffffff";
-  document.getElementById("t75").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t76").innerHTML = "&#9823;";
-  document.getElementById("t76").style.color = "#ffffff";
-  document.getElementById("t76").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t77").innerHTML = "&#9823;";
-  document.getElementById("t77").style.color = "#ffffff";
-  document.getElementById("t77").style.textShadow = "#000000 1px 1px 4px";
   
   document.getElementById("t78").innerHTML = "&#9823;";
-  document.getElementById("t78").style.color = "#ffffff";
-  document.getElementById("t78").style.textShadow = "#000000 1px 1px 4px";
-
-
 
   //cria array que var receber as posicoes do tabuleiro
   cria_array();
@@ -144,87 +122,169 @@ function inicia_jogo() {
 
       }
     }
-
-
+    
+    
     il = new Array();
     il['preto'] = new Array();
     il['branco'] = new Array();
-
+  
   }
 
 
-
-
-
   //posiciona as pecas pretas no array
-  peca[1][1]['peca'] = "torre"; peca[1][1]['cor'] = "preto"; peca[1][1]['mov'] = 0; il['preto']['torre'] = "&#9820;";
+  peca[1][1]['peca'] = "torre"; 
+    peca[1][1]['cor'] = "preto"; 
+      peca[1][1]['mov'] = 0; 
+        il['preto']['torre'] = "&#9820;";
   
-  peca[1][2]['peca'] = "cavalo"; peca[1][2]['cor'] = "preto"; peca[1][2]['mov'] = 0; il['preto']['cavalo'] = "&#9822;";
+  peca[1][2]['peca'] = "cavalo"; 
+    peca[1][2]['cor'] = "preto"; 
+      peca[1][2]['mov'] = 0; 
+        il['preto']['cavalo'] = "&#9822;";
   
-  peca[1][3]['peca'] = "bispo"; peca[1][3]['cor'] = "preto"; peca[1][3]['mov'] = 0; il['preto']['bispo'] = "&#9821;";
+  peca[1][3]['peca'] = "bispo"; 
+    peca[1][3]['cor'] = "preto"; 
+      peca[1][3]['mov'] = 0; 
+        il['preto']['bispo'] = "&#9821;";
   
-  peca[1][4]['peca'] = "rainha"; peca[1][4]['cor'] = "preto"; peca[1][4]['mov'] = 0; il['preto']['rainha'] = "&#9819;";
+  peca[1][4]['peca'] = "rainha"; 
+    peca[1][4]['cor'] = "preto"; 
+      peca[1][4]['mov'] = 0; 
+        il['preto']['rainha'] = "&#9819;";
   
-  peca[1][5]['peca'] = "rei"; peca[1][5]['cor'] = "preto"; peca[1][5]['mov'] = 0; il['preto']['rei'] = "&#9818;";
+  peca[1][5]['peca'] = "rei"; 
+    peca[1][5]['cor'] = "preto"; 
+      peca[1][5]['mov'] = 0; 
+        il['preto']['rei'] = "&#9818;";
   
-  peca[1][6]['peca'] = "bispo"; peca[1][6]['cor'] = "preto"; peca[1][6]['mov'] = 0;
+  peca[1][6]['peca'] = "bispo"; 
+    peca[1][6]['cor'] = "preto"; 
+      peca[1][6]['mov'] = 0;
   
-  peca[1][7]['peca'] = "cavalo"; peca[1][7]['cor'] = "preto"; peca[1][7]['mov'] = 0;
+  peca[1][7]['peca'] = "cavalo"; 
+    peca[1][7]['cor'] = "preto"; 
+      peca[1][7]['mov'] = 0;
   
-  peca[1][8]['peca'] = "torre"; peca[1][8]['cor'] = "preto"; peca[1][8]['mov'] = 0;
+  peca[1][8]['peca'] = "torre"; 
+    peca[1][8]['cor'] = "preto"; 
+      peca[1][8]['mov'] = 0;
 
 
-  peca[2][1]['peca'] = "peao"; peca[2][1]['cor'] = "preto"; peca[2][1]['mov'] = 0; il['preto']['peao'] = "&#9823;";
+  peca[2][1]['peca'] = "peao"; 
+    peca[2][1]['cor'] = "preto"; 
+      peca[2][1]['mov'] = 0; 
+        il['preto']['peao'] = "&#9823;";
   
-  peca[2][2]['peca'] = "peao"; peca[2][2]['cor'] = "preto"; peca[2][2]['mov'] = 0;
+  peca[2][2]['peca'] = "peao"; 
+    peca[2][2]['cor'] = "preto"; 
+      peca[2][2]['mov'] = 0;
   
-  peca[2][3]['peca'] = "peao"; peca[2][3]['cor'] = "preto"; peca[2][3]['mov'] = 0;
+  peca[2][3]['peca'] = "peao"; 
+    peca[2][3]['cor'] = "preto"; 
+      peca[2][3]['mov'] = 0;
   
-  peca[2][4]['peca'] = "peao"; peca[2][4]['cor'] = "preto"; peca[2][4]['mov'] = 0;
+  peca[2][4]['peca'] = "peao"; 
+    peca[2][4]['cor'] = "preto"; 
+      peca[2][4]['mov'] = 0;
   
-  peca[2][5]['peca'] = "peao"; peca[2][5]['cor'] = "preto"; peca[2][5]['mov'] = 0;
+  peca[2][5]['peca'] = "peao"; 
+    peca[2][5]['cor'] = "preto"; 
+      peca[2][5]['mov'] = 0;
   
-  peca[2][6]['peca'] = "peao"; peca[2][6]['cor'] = "preto"; peca[2][6]['mov'] = 0;
+  peca[2][6]['peca'] = "peao"; 
+    peca[2][6]['cor'] = "preto"; 
+      peca[2][6]['mov'] = 0;
   
-  peca[2][7]['peca'] = "peao"; peca[2][7]['cor'] = "preto"; peca[2][7]['mov'] = 0;
+  peca[2][7]['peca'] = "peao"; 
+    peca[2][7]['cor'] = "preto"; 
+      peca[2][7]['mov'] = 0;
   
-  peca[2][8]['peca'] = "peao"; peca[2][8]['cor'] = "preto"; peca[2][8]['mov'] = 0;
+  peca[2][8]['peca'] = "peao"; 
+    peca[2][8]['cor'] = "preto"; 
+      peca[2][8]['mov'] = 0;
 
+
+// [!] Arrumar nessa secção de código
   //posiciona as pecas brancas no array	
-  peca[8][1]['peca'] = "torre"; peca[8][1]['cor'] = "branco"; peca[8][1]['mov'] = 0; il['branco']['torre'] = "&#9814;";
+  peca[8][1]['peca'] = "torre"; 
+    peca[8][1]['cor'] = "branco"; 
+      peca[8][1]['mov'] = 0; 
+        il['branco']['torre'] = "&#9820;";
   
-  peca[8][2]['peca'] = "cavalo"; peca[8][2]['cor'] = "branco"; peca[8][2]['mov'] = 0; il['branco']['cavalo'] = "&#9816;";
+  peca[8][2]['peca'] = "cavalo"; 
+    peca[8][2]['cor'] = "branco"; 
+      peca[8][2]['mov'] = 0; 
+        il['branco']['cavalo'] = "&#9822;";
   
-  peca[8][3]['peca'] = "bispo"; peca[8][3]['cor'] = "branco"; peca[8][3]['mov'] = 0; il['branco']['bispo'] = "&#9815;";
+  peca[8][3]['peca'] = "bispo"; 
+    peca[8][3]['cor'] = "branco";  
+      peca[8][3]['mov'] = 0; 
+        il['branco']['bispo'] = "&#9821;";
   
-  peca[8][4]['peca'] = "rainha"; peca[8][4]['cor'] = "branco"; peca[8][4]['mov'] = 0; il['branco']['rainha'] = "&#9813;";
+  peca[8][4]['peca'] = "rainha"; 
+    peca[8][4]['cor'] = "branco"; 
+      peca[8][4]['mov'] = 0; 
+        il['branco']['rainha'] = "&#9819;";
   
-  peca[8][5]['peca'] = "rei"; peca[8][5]['cor'] = "branco"; peca[8][5]['mov'] = 0; il['branco']['rei'] = "&#9812;";
+  peca[8][5]['peca'] = "rei"; 
+    peca[8][5]['cor'] = "branco"; 
+      peca[8][5]['mov'] = 0; 
+        il['branco']['rei'] = "&#9818;";
   
-  peca[8][6]['peca'] = "bispo"; peca[8][6]['cor'] = "branco"; peca[8][6]['mov'] = 0;
+  peca[8][6]['peca'] = "bispo"; 
+    peca[8][6]['cor'] = "branco"; 
+      peca[8][6]['mov'] = 0;
   
-  peca[8][7]['peca'] = "cavalo"; peca[8][7]['cor'] = "branco"; peca[8][7]['mov'] = 0;
+  peca[8][7]['peca'] = "cavalo"; 
+    peca[8][7]['cor'] = "branco"; 
+      peca[8][7]['mov'] = 0;
   
-  peca[8][8]['peca'] = "torre"; peca[8][8]['cor'] = "branco"; peca[8][8]['mov'] = 0;
+  peca[8][8]['peca'] = "torre"; 
+    peca[8][8]['cor'] = "branco"; 
+      peca[8][8]['mov'] = 0;
 
   
-  peca[7][1]['peca'] = "peao"; peca[7][1]['cor'] = "branco"; peca[7][1]['mov'] = 0; il['branco']['peao'] = "&#9817;";
+  peca[7][1]['peca'] = "peao"; 
+    peca[7][1]['cor'] = "branco"; 
+      peca[7][1]['mov'] = 0; 
+        il['branco']['peao'] = "&#9823;";
   
-  peca[7][2]['peca'] = "peao"; peca[7][2]['cor'] = "branco"; peca[7][2]['mov'] = 0;
+  peca[7][2]['peca'] = "peao"; 
+    peca[7][2]['cor'] = "branco"; 
+      peca[7][2]['mov'] = 0;
   
-  peca[7][3]['peca'] = "peao"; peca[7][3]['cor'] = "branco"; peca[7][3]['mov'] = 0;
+  peca[7][3]['peca'] = "peao"; 
+    peca[7][3]['cor'] = "branco"; 
+      peca[7][3]['mov'] = 0;
   
-  peca[7][4]['peca'] = "peao"; peca[7][4]['cor'] = "branco"; peca[7][4]['mov'] = 0;
+  peca[7][4]['peca'] = "peao"; 
+    peca[7][4]['cor'] = "branco"; 
+      peca[7][4]['mov'] = 0;
   
-  peca[7][5]['peca'] = "peao"; peca[7][5]['cor'] = "branco"; peca[7][5]['mov'] = 0;
+  peca[7][5]['peca'] = "peao"; 
+    peca[7][5]['cor'] = "branco"; 
+      peca[7][5]['mov'] = 0;
   
-  peca[7][6]['peca'] = "peao"; peca[7][6]['cor'] = "branco"; peca[7][6]['mov'] = 0;
+  peca[7][6]['peca'] = "peao"; 
+    peca[7][6]['cor'] = "branco"; 
+      peca[7][6]['mov'] = 0;
   
-  peca[7][7]['peca'] = "peao"; peca[7][7]['cor'] = "branco"; peca[7][7]['mov'] = 0;
+  peca[7][7]['peca'] = "peao"; 
+    peca[7][7]['cor'] = "branco"; 
+      peca[7][7]['mov'] = 0;
   
-  peca[7][8]['peca'] = "peao"; peca[7][8]['cor'] = "branco"; peca[7][8]['mov'] = 0;
+  peca[7][8]['peca'] = "peao"; 
+    peca[7][8]['cor'] = "branco"; 
+      peca[7][8]['mov'] = 0;
 
-
+  // colore peças brancas
+  for(let a = 1; a < 9; a++) {
+    for(let b = 1; b < 9; b++) {
+      if(peca[a][b]['cor'] === "branco") {
+        document.getElementById("t"+a+b).style.color = "#ffffff";
+      }
+    }
+  }
 
   ///aray para movimentar as pecas
   movimenta = new Array();
@@ -254,7 +314,8 @@ function possiveis_movimentos() {
   x = movimenta['selecionada']['x'];
   y = movimenta['selecionada']['y'];
 
-  document.getElementById('t' + x + y).style.backgroundColor = "#442f14"; //muda cor de fundo
+  document.getElementById('t' + x + y)
+    .style.backgroundColor = "#442f14"; //muda cor de fundo
   possiveis[c] = "t" + x + y; c++;
 
   ///////////////////////////////////////////////////////////////////////////////////PEAO////////////////////////////////
@@ -371,7 +432,8 @@ function possiveis_movimentos() {
 
   function possivel(px, py) {
     if (px > 0 && px < 9 && py > 0 && py < 9 && peca[px][py]['cor'] != movimenta['selecionada']['cor']) {
-      document.getElementById('t' + (px) + (py)).style.backgroundColor = "#442f14cc"; //muda cor de fundo
+      document.getElementById('t' + (px) + (py))
+        .style.backgroundColor = "#442f14cc"; //muda cor de fundo
       possiveis[c] = "t" + (px) + (py); c++;
 
       if (!peca[px][py]['peca']) {
@@ -411,12 +473,10 @@ function verifica_possivel(x, y, c) {
 
 }
 
-let template = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
-
 function seleciona(x, y) {
 
-
   if ((movimenta['selecionada']['x'] == 0 || peca[x][y]['cor'] == movimenta['selecionada']['cor']) && peca[x][y]['cor'] == vez) {
+
     if (movimenta['selecionada']['x'] != 0) {
       volta_fundo(); //volta a cor de fundo normal
     }
@@ -426,16 +486,18 @@ function seleciona(x, y) {
       movimenta['selecionada']['peca'] = peca[x][y]['peca']; //recebe a peca selecionada
       movimenta['selecionada']['cor'] = peca[x][y]['cor'];	//recebe a cor selecionada
 
-      console.log(x, y);
-      
       cont_possiveis = possiveis_movimentos();
     }
 
   } else if (verifica_possivel(x, y, cont_possiveis)) { //se for segundo clique e a cor da peca destino for diferente da selecionada
 
+    // mapeamento do tabuleiro
+
     if (peca[x][y]['peca'] == "rei") {
       alert(movimenta['selecionada']['cor'] + " venceu (:");
-      return;
+
+      // [!] Testar trecho de código.
+      return 1;
     }
 
     //Pra trocar de peça quando o peão chegar do outro lado
@@ -451,15 +513,75 @@ function seleciona(x, y) {
     }
 
     if (peca[x][y]['cor'] != movimenta['selecionada']['cor']) {
+
       movimenta['destino']['x'] = x;	//recebe o x do destino(segundo clique)
       movimenta['destino']['y'] = y;  //recebe y do destino(segundo clique)
+      
+      jogada.push(movimenta['selecionada']['x'], movimenta['selecionada']['y']);
+      jogada.push(movimenta['destino']['x'], movimenta['destino']['y']);
+      console.log(jogada);
 
+      switch(jogada[1]) { 
+        case 1:
+          jogadaTraduzida += "a"+jogada[0];
+          break;
+        case 2:
+          jogadaTraduzida += "b"+jogada[0];
+          break;
+        case 3:
+          jogadaTraduzida += "c"+jogada[0];
+          break;
+        case 4:
+          jogadaTraduzida += "d"+jogada[0];
+          break;
+        case 5:
+          jogadaTraduzida += "e"+jogada[0];
+          break;
+        case 6:
+          jogadaTraduzida += "f"+jogada[0];
+          break;
+        case 7:
+          jogadaTraduzida += "g"+jogada[0];
+          break;
+        case 8:
+          jogadaTraduzida += "h"+jogada[0];
+          break;
+      }
+
+      switch(jogada[3]) {
+        case 1:
+          jogadaTraduzida += "a"+jogada[2];
+          break;
+        case 2:
+          jogadaTraduzida += "b"+jogada[2];
+          break;
+        case 3:
+          jogadaTraduzida += "c"+jogada[2];
+          break;
+        case 4:
+          jogadaTraduzida += "d"+jogada[2];
+          break;
+        case 5:
+          jogadaTraduzida += "e"+jogada[2];
+          break;
+        case 6:
+          jogadaTraduzida += "f"+jogada[2];
+          break;
+        case 7:
+          jogadaTraduzida += "g"+jogada[2];
+          break;
+        case 8:
+          jogadaTraduzida += "h"+jogada[2];
+          break;
+      }
+
+      console.log(jogadaTraduzida);
+      
       if (peca[x][y]['peca']) {  //se tiver alguma peca nessa posição
         movimenta['destino']['peca'] = peca[x][y]['peca'];	//destino recebe a peca selecionada
         movimenta['destino']['cor'] = peca[x][y]['cor'];	//destino recebe a cor selecionada
       }
-
-
+      
       document.getElementById("t" + movimenta['selecionada']['x'] + "" + movimenta['selecionada']['y']).innerHTML = ""; //selcionada fica sem imagem
       document.getElementById("t" + x + "" + y).innerHTML = il[movimenta['selecionada']['cor']][movimenta['selecionada']['peca']]; //destino recebe a imagem da peça selecinada
       peca[x][y]['peca'] = movimenta['selecionada']['peca'];	//posicao destino recebe a peca
@@ -473,17 +595,26 @@ function seleciona(x, y) {
       movimenta['selecionada']['peca'] = "0";	//selecionada peca recebe 0 (pra na proxima ver q é o primeiro movimento)
       movimenta['selecionada']['cor'] = "0";	//selecionada cor recebe 0 (pra na proxima ver q é o primeiro movimento)
 
-
     }
 
     volta_fundo(); //volta a cor de fundo normal
 
     if (vez == "branco") { vez = "preto"; } else { vez = "branco"; } //troca a vez
 
+    // colore peças brancas
+    for(let a = 1; a < 9; a++) {
+      for(let b = 1; b < 9; b++) {
+        if(peca[a][b]['cor'] === "branco") {
+          document.getElementById("t"+a+b).style.color = "#ffffff";
+        }
+      }
+    }
+
   }
 
-
-
+  if(jogada.length == 4) {
+    return jogada = [], jogadaTraduzida = "";
+  }
 
 }
 
