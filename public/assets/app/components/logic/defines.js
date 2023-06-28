@@ -1,10 +1,3 @@
-// Ajustes para serem realizados:
-  // ✔️OK | A. Arrumar estilo das peças do tabuleiro.
-  // ⚠️Verificar | B. Arrumar permanência da partida.
-  // ✔️OK | C. Arrumar Interfaces de Grafos e Lances.
-  // ✔️OK | D. Arrumar carregamento da página.
-  // ✔️Parcial OK | E. Arrumar Comunicação com o Back-End, dados de transmissão.
-
 // Tela de Carregamento do Projeto
 let telaCarregamento = document.getElementById("appTransitionPage");
 let telaBarraDeProgresso = document.getElementById("appTransitionPageProgressBar");
@@ -491,13 +484,8 @@ function seleciona(x, y) {
 
   } else if (verifica_possivel(x, y, cont_possiveis)) { //se for segundo clique e a cor da peca destino for diferente da selecionada
 
-    // mapeamento do tabuleiro
-
     if (peca[x][y]['peca'] == "rei") {
       alert(movimenta['selecionada']['cor'] + " venceu (:");
-
-      // [!] Testar trecho de código.
-      return 1;
     }
 
     //Pra trocar de peça quando o peão chegar do outro lado
@@ -595,20 +583,22 @@ function seleciona(x, y) {
       movimenta['selecionada']['peca'] = "0";	//selecionada peca recebe 0 (pra na proxima ver q é o primeiro movimento)
       movimenta['selecionada']['cor'] = "0";	//selecionada cor recebe 0 (pra na proxima ver q é o primeiro movimento)
 
+      // colore peças brancas
+      for(let a = 1; a < 9; a++) {
+        for(let b = 1; b < 9; b++) {
+          if(peca[a][b]['cor'] === "branco") {
+            document.getElementById("t"+a+b).style.color = "#ffffff";
+          } else {
+            document.getElementById("t"+a+b).style.color = "#000000";
+          }
+        }
+      }
+
     }
 
     volta_fundo(); //volta a cor de fundo normal
 
     if (vez == "branco") { vez = "preto"; } else { vez = "branco"; } //troca a vez
-
-    // colore peças brancas
-    for(let a = 1; a < 9; a++) {
-      for(let b = 1; b < 9; b++) {
-        if(peca[a][b]['cor'] === "branco") {
-          document.getElementById("t"+a+b).style.color = "#ffffff";
-        }
-      }
-    }
 
   }
 

@@ -28,10 +28,6 @@
   --cor-quartenaria-pagina: #444444;
   --cor-primaria-tabuleiro: #fce2af;
   --cor-secundaria-tabuleiro: #872a14;
-
-  --cor-painel-avisos-ok: #006600;
-  --cor-painel-avisos-erro: #ff1f00;
-  --cor-painel-avisos-aviso: #ffaa00;
 }
 
 /* CSS Reset */
@@ -322,17 +318,4 @@ html {
   color: #ffffff;
   font-size: 1rem;
 
-}
-
-/* Notificações Card */
-.app-notifications-color-ok {
-  background-color: var(--cor-painel-avisos-ok);
-}
-
-.app-notifications-color-aviso {
-  background-color: var(--cor-painel-avisos-aviso);
-}
-
-.app-notifications-color-erro {
-  background-color: var(--cor-painel-avisos-erro);
 }
