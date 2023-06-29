@@ -17,13 +17,11 @@ window.addEventListener("load", () => {
 
 // configurar método POST para responder do back-end
 let response = new XMLHttpRequest();
-  response.open("POST", "http://localhost:3000");
-  response.setRequestHeader("Content-Type", "Debug Requests");
-  response.send();
 
 // variáveis
 let jogada = []
- ,jogadaTraduzida = "";
+ ,jogadaTraduzida = "",
+ pecacor = "";
 
 function inicia_jogo() {
   vez = "branco"; //vez de quem jogar
@@ -603,6 +601,10 @@ function seleciona(x, y) {
   }
 
   if(jogada.length == 4) {
+    response.open("POST", "http://localhost:3000");
+    response.setRequestHeader("Content-Value", jogadaTraduzida);
+    response.send();
+
     return jogada = [], jogadaTraduzida = "";
   }
 
