@@ -18,10 +18,14 @@ window.addEventListener("load", () => {
 // configurar método POST para responder do back-end
 let response = new XMLHttpRequest();
 
+// componentes de grafos e lances
+let grafos = document.getElementById("grafo-img");
+let lances = document.getElementById("lances");
+
 // variáveis
 let jogada = []
- ,jogadaTraduzida = "",
- pecacor = "";
+ ,jogadaTraduzida = ""
+ ,pecacor = "";
 
 function inicia_jogo() {
   vez = "branco"; //vez de quem jogar
