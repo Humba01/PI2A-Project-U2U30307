@@ -11,6 +11,7 @@
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
 #### Parte II (v2 - Frontend Ok / Backend Integrado)
+![Google Colab](https://img.shields.io/badge/Google_Colab-%2320232a.svg?style=for-the-badge&logo=GoogleColab&logoColor=gold)
 ![Python](https://img.shields.io/badge/python-%2320232a?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Flask](https://img.shields.io/badge/flask-%2320232a.svg?style=for-the-badge&logo=flask&logoColor=%2361DAFB)
 
