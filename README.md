@@ -1,6 +1,6 @@
 <div align="center">
 
-# Xadrez-Project-PD83007
+# PI2A-XProject-PD83007
 
 ### **Projeto Integrador 2A - 2023/1**
 
